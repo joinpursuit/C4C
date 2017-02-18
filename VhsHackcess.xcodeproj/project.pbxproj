@@ -22,10 +22,14 @@
 		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
 		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
 		4BE6662E1E58A64F000D6B82 /* MessageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */; };
+		9ED3ED391E58FBBD00A27725 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED381E58FBBD00A27725 /* User.swift */; };
+		9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3A1E58FBFC00A27725 /* Post.swift */; };
+		9ED3ED3D1E58FC5600A27725 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3C1E58FC5600A27725 /* Comment.swift */; };
+		EE17D77D4EF008DAEAC3F868 /* Pods_VhsHackcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966B3764DF4777EF9AB52BEB /* Pods_VhsHackcess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		40B8700B09107D1EAF5EA09D /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
+		35841D9C4D247F7A10B47170 /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
 		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestManager.swift; path = VhsHackcess/APIRequestManager.swift; sourceTree = "<group>"; };
 		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = VhsHackcess/ServiceRequest.swift; sourceTree = "<group>"; };
 		4B1B88731E57FE950091CA93 /* Community Districts.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Community Districts.geojson"; sourceTree = "<group>"; };
@@ -43,6 +47,11 @@
 		4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualComplaintViewController.swift; sourceTree = "<group>"; };
 		4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
+		93CB16A242474CF61E1B469D /* Pods-VhsHackcess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.debug.xcconfig"; sourceTree = "<group>"; };
+		966B3764DF4777EF9AB52BEB /* Pods_VhsHackcess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VhsHackcess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ED3ED381E58FBBD00A27725 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9ED3ED3A1E58FBFC00A27725 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		9ED3ED3C1E58FC5600A27725 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE17D77D4EF008DAEAC3F868 /* Pods_VhsHackcess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +83,8 @@
 				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 				4B4EA5A01E57E2EE00582FBC /* Supporting Files */,
 				4B4EA57E1E57CE2300582FBC /* Products */,
+				56FD381A16B76067032A90D3 /* Pods */,
+				F826A933395AC7BD52B880A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +99,7 @@
 		4B4EA57F1E57CE2300582FBC /* VhsHackcess */ = {
 			isa = PBXGroup;
 			children = (
+				9ED3ED351E58F7F500A27725 /* Databasing */,
 				4B4EA59E1E57E2D300582FBC /* View Controllers */,
 				4B4EA59F1E57E2DB00582FBC /* Views */,
 			);
@@ -100,7 +113,6 @@
 				4B4EA5941E57E24600582FBC /* ComplaintTypesTableViewController.swift */,
 				4B4EA59A1E57E29C00582FBC /* MapViewController.swift */,
 				4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */,
-				4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */,
 				4B4EA5981E57E27800582FBC /* DateRangeViewController.swift */,
 			);
 			name = "View Controllers";
@@ -129,6 +141,50 @@
 			path = VhsHackcess;
 			sourceTree = "<group>";
 		};
+		56FD381A16B76067032A90D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93CB16A242474CF61E1B469D /* Pods-VhsHackcess.debug.xcconfig */,
+				35841D9C4D247F7A10B47170 /* Pods-VhsHackcess.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9ED3ED351E58F7F500A27725 /* Databasing */ = {
+			isa = PBXGroup;
+			children = (
+				9ED3ED371E58F96300A27725 /* DB View Controllers */,
+				9ED3ED361E58F7FC00A27725 /* DB Models */,
+			);
+			name = Databasing;
+			sourceTree = "<group>";
+		};
+		9ED3ED361E58F7FC00A27725 /* DB Models */ = {
+			isa = PBXGroup;
+			children = (
+				9ED3ED381E58FBBD00A27725 /* User.swift */,
+				9ED3ED3A1E58FBFC00A27725 /* Post.swift */,
+				9ED3ED3C1E58FC5600A27725 /* Comment.swift */,
+			);
+			name = "DB Models";
+			sourceTree = "<group>";
+		};
+		9ED3ED371E58F96300A27725 /* DB View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */,
+			);
+			name = "DB View Controllers";
+			sourceTree = "<group>";
+		};
+		F826A933395AC7BD52B880A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				966B3764DF4777EF9AB52BEB /* Pods_VhsHackcess.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B4EA58F1E57CE2300582FBC /* Build configuration list for PBXNativeTarget "VhsHackcess" */;
 			buildPhases = (
+				85F06D386F9BD7E22756A9A1 /* [CP] Check Pods Manifest.lock */,
 				4B4EA5791E57CE2300582FBC /* Sources */,
 				4B4EA57A1E57CE2300582FBC /* Frameworks */,
 				4B4EA57B1E57CE2300582FBC /* Resources */,
+				2ABBC3E2312E541A253A3052 /* [CP] Embed Pods Frameworks */,
+				AA78052679D38C1609596E01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,6 +256,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2ABBC3E2312E541A253A3052 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85F06D386F9BD7E22756A9A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA78052679D38C1609596E01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B4EA5791E57CE2300582FBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -205,11 +312,14 @@
 				4B4EA5951E57E24600582FBC /* ComplaintTypesTableViewController.swift in Sources */,
 				4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */,
 				4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */,
+				9ED3ED3D1E58FC5600A27725 /* Comment.swift in Sources */,
 				4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */,
+				9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */,
 				4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */,
 				472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */,
 				4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */,
 				4B4EA5931E57E21A00582FBC /* CommunityBoardViewController.swift in Sources */,
+				9ED3ED391E58FBBD00A27725 /* User.swift in Sources */,
 				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
 				4BE6662E1E58A64F000D6B82 /* MessageBoardViewController.swift in Sources */,
 				4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */,
@@ -333,6 +443,7 @@
 		};
 		4B4EA5901E57CE2300582FBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93CB16A242474CF61E1B469D /* Pods-VhsHackcess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VhsHackcess/Info.plist;
@@ -345,6 +456,7 @@
 		};
 		4B4EA5911E57CE2300582FBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35841D9C4D247F7A10B47170 /* Pods-VhsHackcess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VhsHackcess/Info.plist;
