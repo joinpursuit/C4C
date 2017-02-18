@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5801E57CE2300582FBC /* AppDelegate.swift */; };
+		4B4EA5861E57CE2300582FBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5841E57CE2300582FBC /* Main.storyboard */; };
+		4B4EA5881E57CE2300582FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5871E57CE2300582FBC /* Assets.xcassets */; };
+		4B4EA58B1E57CE2300582FBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5891E57CE2300582FBC /* LaunchScreen.storyboard */; };
+		4B4EA5931E57E21A00582FBC /* CommunityBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5921E57E21A00582FBC /* CommunityBoardViewController.swift */; };
+		4B4EA5951E57E24600582FBC /* ComplaintTypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5941E57E24600582FBC /* ComplaintTypesTableViewController.swift */; };
+		4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5961E57E26200582FBC /* ComplaintTypesTableViewCell.swift */; };
+		4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5981E57E27800582FBC /* DateRangeViewController.swift */; };
+		4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59A1E57E29C00582FBC /* MapViewController.swift */; };
+		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
+		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VhsHackcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4EA5801E57CE2300582FBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B4EA5851E57CE2300582FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B4EA5871E57CE2300582FBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B4EA58A1E57CE2300582FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B4EA58C1E57CE2300582FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B4EA5921E57E21A00582FBC /* CommunityBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityBoardViewController.swift; sourceTree = "<group>"; };
+		4B4EA5941E57E24600582FBC /* ComplaintTypesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintTypesTableViewController.swift; sourceTree = "<group>"; };
+		4B4EA5961E57E26200582FBC /* ComplaintTypesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintTypesTableViewCell.swift; sourceTree = "<group>"; };
+		4B4EA5981E57E27800582FBC /* DateRangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRangeViewController.swift; sourceTree = "<group>"; };
+		4B4EA59A1E57E29C00582FBC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualComplaintViewController.swift; sourceTree = "<group>"; };
+		4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintDetailsTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B4EA57A1E57CE2300582FBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B4EA5741E57CE2200582FBC = {
+			isa = PBXGroup;
+			children = (
+				4B4EA57F1E57CE2300582FBC /* VhsHackcess */,
+				4B4EA5A01E57E2EE00582FBC /* Supporting Files */,
+				4B4EA57E1E57CE2300582FBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B4EA57E1E57CE2300582FBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B4EA57F1E57CE2300582FBC /* VhsHackcess */ = {
+			isa = PBXGroup;
+			children = (
+				4B4EA59E1E57E2D300582FBC /* View Controllers */,
+				4B4EA59F1E57E2DB00582FBC /* Views */,
+			);
+			path = VhsHackcess;
+			sourceTree = "<group>";
+		};
+		4B4EA59E1E57E2D300582FBC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B4EA5921E57E21A00582FBC /* CommunityBoardViewController.swift */,
+				4B4EA5941E57E24600582FBC /* ComplaintTypesTableViewController.swift */,
+				4B4EA59A1E57E29C00582FBC /* MapViewController.swift */,
+				4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */,
+				4B4EA5981E57E27800582FBC /* DateRangeViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4B4EA59F1E57E2DB00582FBC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B4EA5961E57E26200582FBC /* ComplaintTypesTableViewCell.swift */,
+				4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4B4EA5A01E57E2EE00582FBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B4EA5801E57CE2300582FBC /* AppDelegate.swift */,
+				4B4EA5841E57CE2300582FBC /* Main.storyboard */,
+				4B4EA5871E57CE2300582FBC /* Assets.xcassets */,
+				4B4EA5891E57CE2300582FBC /* LaunchScreen.storyboard */,
+				4B4EA58C1E57CE2300582FBC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = VhsHackcess;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B4EA57C1E57CE2300582FBC /* VhsHackcess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B4EA58F1E57CE2300582FBC /* Build configuration list for PBXNativeTarget "VhsHackcess" */;
+			buildPhases = (
+				4B4EA5791E57CE2300582FBC /* Sources */,
+				4B4EA57A1E57CE2300582FBC /* Frameworks */,
+				4B4EA57B1E57CE2300582FBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VhsHackcess;
+			productName = VhsHackcess;
+			productReference = 4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B4EA5751E57CE2200582FBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = C4Q;
+				TargetAttributes = {
+					4B4EA57C1E57CE2300582FBC = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4B4EA5781E57CE2300582FBC /* Build configuration list for PBXProject "VhsHackcess" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4B4EA5741E57CE2200582FBC;
+			productRefGroup = 4B4EA57E1E57CE2300582FBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B4EA57C1E57CE2300582FBC /* VhsHackcess */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B4EA57B1E57CE2300582FBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B4EA58B1E57CE2300582FBC /* LaunchScreen.storyboard in Resources */,
+				4B4EA5881E57CE2300582FBC /* Assets.xcassets in Resources */,
+				4B4EA5861E57CE2300582FBC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B4EA5791E57CE2300582FBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B4EA5951E57E24600582FBC /* ComplaintTypesTableViewController.swift in Sources */,
+				4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */,
+				4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */,
+				4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */,
+				4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */,
+				4B4EA5931E57E21A00582FBC /* CommunityBoardViewController.swift in Sources */,
+				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
+				4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4B4EA5841E57CE2300582FBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B4EA5851E57CE2300582FBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4B4EA5891E57CE2300582FBC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B4EA58A1E57CE2300582FBC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B4EA58D1E57CE2300582FBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4B4EA58E1E57CE2300582FBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4B4EA5901E57CE2300582FBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VhsHackcess/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.C4Q.VhsHackcess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4B4EA5911E57CE2300582FBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VhsHackcess/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.C4Q.VhsHackcess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B4EA5781E57CE2300582FBC /* Build configuration list for PBXProject "VhsHackcess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B4EA58D1E57CE2300582FBC /* Debug */,
+				4B4EA58E1E57CE2300582FBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B4EA58F1E57CE2300582FBC /* Build configuration list for PBXNativeTarget "VhsHackcess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B4EA5901E57CE2300582FBC /* Debug */,
+				4B4EA5911E57CE2300582FBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B4EA5751E57CE2200582FBC /* Project object */;
+}
