@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710959C1E58A2F20031D271 /* APIRequestManager.swift */; };
+		472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */; };
 		4B1B88741E57FE950091CA93 /* Community Districts.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B88731E57FE950091CA93 /* Community Districts.geojson */; };
 		4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5801E57CE2300582FBC /* AppDelegate.swift */; };
 		4B4EA5861E57CE2300582FBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5841E57CE2300582FBC /* Main.storyboard */; };
@@ -25,7 +26,8 @@
 
 /* Begin PBXFileReference section */
 		40B8700B09107D1EAF5EA09D /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
-		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestManager.swift; path = VhsHackcess/APIRequestManager.swift; sourceTree = "<group>"; };
+		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = VhsHackcess/ServiceRequest.swift; sourceTree = "<group>"; };
 		4B1B88731E57FE950091CA93 /* Community Districts.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Community Districts.geojson"; sourceTree = "<group>"; };
 		4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VhsHackcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4EA5801E57CE2300582FBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,10 +58,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472C27CB1E58A97D007CE152 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Model Objects";
+			path = VhsHackcess;
+			sourceTree = "<group>";
+		};
 		4B4EA5741E57CE2200582FBC = {
 			isa = PBXGroup;
 			children = (
 				4B4EA57F1E57CE2300582FBC /* VhsHackcess */,
+				472C27CB1E58A97D007CE152 /* Model Objects */,
+				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
+				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 				4B4EA5A01E57E2EE00582FBC /* Supporting Files */,
 				4B4EA57E1E57CE2300582FBC /* Products */,
 				4BC444D378E0B5E321B3A3DA /* Pods */,
@@ -110,7 +123,6 @@
 			children = (
 				4B1B88731E57FE950091CA93 /* Community Districts.geojson */,
 				4B4EA5801E57CE2300582FBC /* AppDelegate.swift */,
-				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
 				4B4EA5841E57CE2300582FBC /* Main.storyboard */,
 				4B4EA5871E57CE2300582FBC /* Assets.xcassets */,
 				4B4EA5891E57CE2300582FBC /* LaunchScreen.storyboard */,
@@ -266,6 +278,7 @@
 				4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */,
 				4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */,
 				4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */,
+				472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */,
 				4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */,
 				4B4EA5931E57E21A00582FBC /* CommunityBoardViewController.swift in Sources */,
 				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
