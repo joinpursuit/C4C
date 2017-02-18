@@ -108,7 +108,7 @@ class ServiceRequest {
                 
                 serviceRequests?.append(serviceRequest)
             }
-            print("Array count: \(serviceRequests?.count!)")
+            print("Array count: \(serviceRequests?.count)")
             
         }
         catch ParsingErrors.communityBoardError {
