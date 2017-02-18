@@ -25,5 +25,12 @@ class CommunityBoardViewController: UIViewController {
     @IBAction func getDataTapped(_ sender: UIButton) {
     }
     
+    // MARK: - TextField Delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
 
 }
