@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import GEOSwift
 
 class MapViewController: UIViewController {
 
@@ -19,7 +18,6 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBoundry()
     }
 
     // MARK: - Actions
@@ -28,30 +26,6 @@ class MapViewController: UIViewController {
     }
 
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
-    }
-    
-    func addBoundry() {
-//        if let geoJSONURL = Bundle.main.url(forResource: "Community Districts", withExtension: "geojson") {
-//            do {
-//                let geometries = try Geometry.fromGeoJSON(geoJSONURL)
-//                if let geo = geometries?[0] as? MultiPolygon {
-//                    
-//                    if let shapesCollection = geo.mapShape() as? MKShapesCollection {
-//                        
-//                        let shapes = shapesCollection.shapes
-//                        
-//                        for shape in shapes {
-//                            if let polygon = shape as? MKPolygon {
-//                                mapView.add(polygon)
-//                            }
-//                        }
-//                    }
-//                    
-//                }
-//            } catch {
-//                print("Unable to load geojson data")
-//            }
-//        }
     }
     
     // MARK: - Table view data source
