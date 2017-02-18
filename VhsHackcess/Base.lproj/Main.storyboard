@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ItQ-IF-WKe" id="7bD-Lr-7IC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency and complaint type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gc-Zq-EkP">
@@ -136,7 +136,6 @@
         <!--Title-->
         <scene sceneID="rR2-Qt-a2u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ur7-h6-f2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="z2G-kA-jYR" customClass="MapViewController" customModule="VhsHackcess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1ks-H8-ayv"/>
@@ -160,7 +159,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9na-pi-JWR" id="Yth-1S-mhP">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="68.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descriptor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo5-1a-PMK">
@@ -243,6 +242,7 @@
                         <outlet property="tableView" destination="M9r-OP-7VQ" id="zEk-Nd-PdB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ur7-h6-f2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2692" y="439.43028485757122"/>
         </scene>
