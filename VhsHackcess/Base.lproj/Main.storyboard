@@ -257,6 +257,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="pHa-lR-CMW" id="CKy-my-YXp"/>
+                        <outlet property="mapViewBottomConstraint" destination="QSl-DO-Ncp" id="r3T-8O-oL6"/>
                         <outlet property="segmentedControl" destination="cJG-wl-R4R" id="gvM-yU-iRD"/>
                         <outlet property="tableView" destination="M9r-OP-7VQ" id="zEk-Nd-PdB"/>
                     </connections>

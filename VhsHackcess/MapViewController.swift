@@ -14,7 +14,9 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
     
+    var placeholderComplaints: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,4 +52,16 @@ class MapViewController: UIViewController {
      }
      */
     
+    // MARK: - Helper functions
+    
+    func setMapPins() {
+        mapView.removeAnnotations(mapView.annotations)
+        for object in placeholderComplaints {
+            let pinAnnotation = MKPointAnnotation()
+            pinAnnotation.title = "placeholder title"
+            pinAnnotation.subtitle = "placeholder date and time"
+            // pinAnnotation.coordinate = object.location.coordinate
+            mapView.addAnnotation(pinAnnotation)
+        }
+    }
 }
