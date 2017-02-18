@@ -83,7 +83,7 @@
         <!--Item-->
         <scene sceneID="ORI-Of-8hL">
             <objects>
-                <viewController id="vS9-nY-wa2" customClass="MessageBoardViewController" sceneMemberID="viewController">
+                <viewController id="vS9-nY-wa2" customClass="MessageBoardViewController" customModule="VhsHackcess" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="abo-Rj-rVk"/>
                         <viewControllerLayoutGuide type="bottom" id="BAg-gj-Owf"/>
@@ -171,7 +171,7 @@
                                 </connections>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M9r-OP-7VQ">
-                                <rect key="frame" x="16" y="342" width="343" height="269"/>
+                                <rect key="frame" x="16" y="342" width="343" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="69" id="9na-pi-JWR" customClass="ComplaintDetailsTableViewCell" customModule="VhsHackcess" customModuleProvider="target">
@@ -222,7 +222,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-wl-R4R">
-                                <rect key="frame" x="16" y="619" width="343" height="29"/>
+                                <rect key="frame" x="16" y="570" width="343" height="29"/>
                                 <segments>
                                     <segment title="Map and Data"/>
                                     <segment title="Data Only"/>
@@ -405,6 +405,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="R6J-1e-S5x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="HBU-P2-5uG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>

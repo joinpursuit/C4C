@@ -19,6 +19,7 @@
 		4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59A1E57E29C00582FBC /* MapViewController.swift */; };
 		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
 		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
+		4BE6662E1E58A64F000D6B82 /* MessageBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */; };
 		C6230351516A2A04101E1A28 /* Pods_VhsHackcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997C056F70952EE21085DD1B /* Pods_VhsHackcess.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		4B4EA59A1E57E29C00582FBC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualComplaintViewController.swift; sourceTree = "<group>"; };
 		4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBoardViewController.swift; sourceTree = "<group>"; };
 		997C056F70952EE21085DD1B /* Pods_VhsHackcess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VhsHackcess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C9FF4C8B49B2E6ACD406D /* Pods-VhsHackcess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 				4B4EA5941E57E24600582FBC /* ComplaintTypesTableViewController.swift */,
 				4B4EA59A1E57E29C00582FBC /* MapViewController.swift */,
 				4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */,
+				4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */,
 				4B4EA5981E57E27800582FBC /* DateRangeViewController.swift */,
 			);
 			name = "View Controllers";
@@ -265,6 +268,7 @@
 				4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */,
 				4B4EA5931E57E21A00582FBC /* CommunityBoardViewController.swift in Sources */,
 				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
+				4BE6662E1E58A64F000D6B82 /* MessageBoardViewController.swift in Sources */,
 				4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
