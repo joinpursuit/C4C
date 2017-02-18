@@ -25,6 +25,9 @@
 		9ED3ED391E58FBBD00A27725 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED381E58FBBD00A27725 /* User.swift */; };
 		9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3A1E58FBFC00A27725 /* Post.swift */; };
 		9ED3ED3D1E58FC5600A27725 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3C1E58FC5600A27725 /* Comment.swift */; };
+		9ED3ED3F1E59002200A27725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3E1E59002200A27725 /* GoogleService-Info.plist */; };
+		9ED3ED411E59016F00A27725 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ED3ED401E59016F00A27725 /* PostTableViewCell.xib */; };
+		9ED3ED461E59061F00A27725 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED451E59061F00A27725 /* PostTableViewCell.swift */; };
 		EE17D77D4EF008DAEAC3F868 /* Pods_VhsHackcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966B3764DF4777EF9AB52BEB /* Pods_VhsHackcess.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		9ED3ED381E58FBBD00A27725 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9ED3ED3A1E58FBFC00A27725 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9ED3ED3C1E58FC5600A27725 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		9ED3ED3E1E59002200A27725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9ED3ED401E59016F00A27725 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		9ED3ED451E59061F00A27725 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 		4B4EA5A01E57E2EE00582FBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9ED3ED3E1E59002200A27725 /* GoogleService-Info.plist */,
 				4B1B88731E57FE950091CA93 /* Community Districts.geojson */,
 				4B4EA5801E57CE2300582FBC /* AppDelegate.swift */,
 				4B4EA5841E57CE2300582FBC /* Main.storyboard */,
@@ -155,6 +162,8 @@
 			children = (
 				9ED3ED371E58F96300A27725 /* DB View Controllers */,
 				9ED3ED361E58F7FC00A27725 /* DB Models */,
+				9ED3ED421E59017C00A27725 /* DB Views */,
+				9ED3ED451E59061F00A27725 /* PostTableViewCell.swift */,
 			);
 			name = Databasing;
 			sourceTree = "<group>";
@@ -175,6 +184,14 @@
 				4BE6662D1E58A64F000D6B82 /* MessageBoardViewController.swift */,
 			);
 			name = "DB View Controllers";
+			sourceTree = "<group>";
+		};
+		9ED3ED421E59017C00A27725 /* DB Views */ = {
+			isa = PBXGroup;
+			children = (
+				9ED3ED401E59016F00A27725 /* PostTableViewCell.xib */,
+			);
+			name = "DB Views";
 			sourceTree = "<group>";
 		};
 		F826A933395AC7BD52B880A6 /* Frameworks */ = {
@@ -249,8 +266,10 @@
 			files = (
 				4B1B88741E57FE950091CA93 /* Community Districts.geojson in Resources */,
 				4B4EA58B1E57CE2300582FBC /* LaunchScreen.storyboard in Resources */,
+				9ED3ED411E59016F00A27725 /* PostTableViewCell.xib in Resources */,
 				4B4EA5881E57CE2300582FBC /* Assets.xcassets in Resources */,
 				4B4EA5861E57CE2300582FBC /* Main.storyboard in Resources */,
+				9ED3ED3F1E59002200A27725 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +330,7 @@
 			files = (
 				4B4EA5951E57E24600582FBC /* ComplaintTypesTableViewController.swift in Sources */,
 				4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */,
+				9ED3ED461E59061F00A27725 /* PostTableViewCell.swift in Sources */,
 				4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */,
 				9ED3ED3D1E58FC5600A27725 /* Comment.swift in Sources */,
 				4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */,
