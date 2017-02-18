@@ -9,9 +9,38 @@
 import UIKit
 
 class ComplaintTypesTableViewController: UITableViewController {
+    //MARK: - Properties
+    var requests: [ServiceRequest] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Testing API call
+        APIRequestManager.manager.getData(endPoint: APIRequestManager.manager.endpoint) { (data: Data?) in
+            if let unwrappedData = data {
+                ServiceRequest.getServiceRequests(data: unwrappedData)
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     // MARK: - Actions
