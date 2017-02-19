@@ -11,7 +11,6 @@ import Foundation
 class APIRequestManager {
     //MARK: - Properties
     static let manager = APIRequestManager()
-    let openDataEndpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-18' and '2017-02-18'&community_board=03 BRONX&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
     
     //MARK: - Initializer
     private init() {}
