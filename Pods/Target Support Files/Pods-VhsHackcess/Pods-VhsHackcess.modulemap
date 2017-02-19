@@ -1,6 +1,0 @@
-framework module Pods_VhsHackcess {
-  umbrella header "Pods-VhsHackcess-umbrella.h"
-
-  export *
-  module * { export * }
-}
