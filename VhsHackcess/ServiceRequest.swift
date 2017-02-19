@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 enum ParsingErrors: Error {
     case communityBoardError, complaintTypeError, createdDateError, descriptorError, statusError, uniqueKeyError
@@ -24,14 +25,14 @@ class ServiceRequest {
     let crossStreet2: String?
     let descriptor: String
     let incidentAddress: String?
-    let coordinates: (String, String)?
+    let coordinates: CLLocationCoordinate2D?
     let locationType: String
     let resolutionDescription: String
     let status: String
     let uniqueKey: String
     
     //MARK: - Initializer
-    init(bridgeHighwayDirection: String?, bridgeHighwayName: String?, bridgeHighwaySegment: String?, communityBoard: String, complaintType: String, createdDate: String, crossStreet1: String?, crossStreet2: String?, descriptor: String, incidentAddress: String, coordinates: (String, String)?, locationType: String, resolutionDescription: String, status: String, uniqueKey: String) {
+    init(bridgeHighwayDirection: String?, bridgeHighwayName: String?, bridgeHighwaySegment: String?, communityBoard: String, complaintType: String, createdDate: String, crossStreet1: String?, crossStreet2: String?, descriptor: String, incidentAddress: String, coordinates: CLLocationCoordinate2D?, locationType: String, resolutionDescription: String, status: String, uniqueKey: String) {
         
         self.bridgeHighwayDirection = bridgeHighwayDirection
         self.bridgeHighwayName = bridgeHighwayName
@@ -73,7 +74,14 @@ class ServiceRequest {
                 
                 let incidentAddress = dict["incident_address"] as? String ?? "N.A."
                 let location = dict["location"] as? [String: Any]
-                let coordinates = location?["coordinates"] as? [Float] ?? [0.0, 0.0]
+                
+                var coordinates: CLLocationCoordinate2D?
+                if let coord = location?["coordinates"] as? [Double],
+                    let longitude = coord[0] as? Double,
+                    let latitude = coord[1] as? Double {
+                    coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                }
+                
                 let locationType = dict["location_type"] as? String ?? "N.A."
                 let resolutionDescription = dict["resolution_description"] as? String ?? "N.A."
                 
@@ -99,8 +107,7 @@ class ServiceRequest {
                                                                     crossStreet2: cs2,
                                                                     descriptor: descriptor,
                                                                     incidentAddress: incidentAddress,
-                                                                    coordinates: (String(coordinates[0]),
-                                                                                  String(coordinates[1])),
+                                                                    coordinates: coordinates,
                                                                     locationType: locationType,
                                                                     resolutionDescription: resolutionDescription,
                                                                     status: status,
@@ -108,7 +115,8 @@ class ServiceRequest {
                 
                 serviceRequests?.append(serviceRequest)
             }
-            print("Array count: \(serviceRequests?.count)")
+//            print("Array count: \(serviceRequests?.count)")
+//            dump(serviceRequests)
             
         }
         catch ParsingErrors.communityBoardError {

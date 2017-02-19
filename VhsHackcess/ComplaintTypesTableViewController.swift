@@ -16,6 +16,7 @@ class ComplaintTypesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //Testing API call
+
         APIRequestManager.manager.getData(endPoint: APIRequestManager.manager.openDataEndpoint) { (data: Data?) in
             if let cbRequests = ServiceRequest.getServiceRequests(data: data!) {
                 self.requests = cbRequests
