@@ -17,9 +17,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
     
     var requests: [ServiceRequest] = []
-    
+    var complaintType: String?
     var endpoint: String?
-    
     var regionCalculations: (minLat: CLLocationDegrees, minLong: CLLocationDegrees, maxLat: CLLocationDegrees, maxLong: CLLocationDegrees)?
     
     override func viewDidLoad() {
@@ -34,6 +33,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // MARK: - Setup
     
     func setup() {
+        if let complaintType = complaintType {
+            self.title = complaintType
+        }
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -148,4 +150,19 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             self.mapView.setRegion(mkCoordinateRegion, animated: true)
         }
     }
+    
+    
+    
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tappedButton = sender as? UIButton,
+            let tappedCell = tappedButton.superview?.superview as? UITableViewCell, // change if using custom class
+            let dvc = segue.destination as? IndividualComplaintViewController,
+            let cellIndexPath = self.tableView.indexPath(for: tappedCell)
+            else { return }
+        dvc.request = requests[cellIndexPath.row]
+    }
+ 
+    
 }

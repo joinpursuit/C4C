@@ -23,16 +23,16 @@ class ServiceRequest {
     let createdDate: String
     let crossStreet1: String?
     let crossStreet2: String?
-    let descriptor: String
+    let descriptor: String?
     let incidentAddress: String?
     let coordinates: CLLocationCoordinate2D?
-    let locationType: String
-    let resolutionDescription: String
+    let locationType: String?
+    let resolutionDescription: String?
     let status: String
     let uniqueKey: String
     
     //MARK: - Initializer
-    init(bridgeHighwayDirection: String?, bridgeHighwayName: String?, bridgeHighwaySegment: String?, communityBoard: String, complaintType: String, createdDate: String, crossStreet1: String?, crossStreet2: String?, descriptor: String, incidentAddress: String, coordinates: CLLocationCoordinate2D?, locationType: String, resolutionDescription: String, status: String, uniqueKey: String) {
+    init(bridgeHighwayDirection: String?, bridgeHighwayName: String?, bridgeHighwaySegment: String?, communityBoard: String, complaintType: String, createdDate: String, crossStreet1: String?, crossStreet2: String?, descriptor: String?, incidentAddress: String?, coordinates: CLLocationCoordinate2D?, locationType: String?, resolutionDescription: String?, status: String, uniqueKey: String) {
         
         self.bridgeHighwayDirection = bridgeHighwayDirection
         self.bridgeHighwayName = bridgeHighwayName
@@ -65,16 +65,42 @@ class ServiceRequest {
             
             for dict in arrayOfServiceRequests {
                 
-                let bhd = dict["bridge_highway_direction"] as? String ?? "N.A."
-                let bhn = dict["bridge_highway_name"] as? String ?? "N.A."
-                let bhs = dict["bridge_highway_segment"] as? String ?? "N.A."
+                var bhd: String?
+                if let bridgeHighwayDirection = dict["bridge_highway_direction"] as? String {
+                    bhd = bridgeHighwayDirection
+                }
                 
-                let cs1 = dict["cross_street_1"] as? String ?? "N.A."
-                let cs2 = dict["cross_street_2"] as? String ?? "N.A."
+                var bhn: String?
+                if let bridgeHighwayName = dict["bridge_highway_name"] as? String {
+                    bhn = bridgeHighwayName
+                }
                 
-                let incidentAddress = dict["incident_address"] as? String ?? "N.A."
+                var bhs: String?
+                if let bridgeHighwaySegment = dict["bridge_highway_segment"] as? String {
+                    bhs = bridgeHighwaySegment
+                }
+                
+                var cs1: String?
+                if let crossStreet1 = dict["cross_street_1"] as? String {
+                    cs1 = crossStreet1
+                }
+
+                var cs2: String?
+                if let crossStreet2 = dict["cross_street_2"] as? String {
+                    cs2 = crossStreet2
+                }
+                
+                var incidentAddress: String?
+                if let incidentAdd = dict["incident_address"] as? String {
+                    incidentAddress = incidentAdd
+                }
+                
                 let location = dict["location"] as? [String: Any]
-                let descriptor = dict["descriptor"] as? String ?? "N.A."
+                
+                var descriptor: String?
+                if let des = dict["descriptor"] as? String {
+                    descriptor = des
+                }
                 
                 var coordinates: CLLocationCoordinate2D?
                 if let coord = location?["coordinates"] as? [Double],
@@ -83,8 +109,15 @@ class ServiceRequest {
                     coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 }
                 
-                let locationType = dict["location_type"] as? String ?? "N.A."
-                let resolutionDescription = dict["resolution_description"] as? String ?? "N.A."
+                var locationType: String?
+                if let locType = dict["location_type"] as? String {
+                    locationType = locType
+                }
+                
+                var resolutionDescription: String?
+                if let resDes = dict["resolution_description"] as? String {
+                    resolutionDescription = resDes
+                }
                 
                 guard let communityBoard = dict["community_board"] as? String else { throw ParsingErrors.communityBoardError }
                 
