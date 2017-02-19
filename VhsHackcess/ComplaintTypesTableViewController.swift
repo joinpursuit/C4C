@@ -16,12 +16,12 @@ class ComplaintTypesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //Testing API call
-        APIRequestManager.manager.getData(endPoint: APIRequestManager.manager.endpoint) { (data: Data?) in
-            if let unwrappedData = data {
-                ServiceRequest.getServiceRequests(data: unwrappedData)
-            }
-            
-        }
+//        APIRequestManager.manager.getData(endPoint: APIRequestManager.manager.endpoint) { (data: Data?) in
+//            if let unwrappedData = data {
+//                ServiceRequest.getServiceRequests(data: unwrappedData)
+//            }
+//            
+//        }
         
         
         
