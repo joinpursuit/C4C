@@ -85,7 +85,12 @@ class ComplaintTypesTableViewController: UITableViewController {
             let cellIndexPath = self.tableView.indexPath(for: tappedCell)
             else { return }
         let selectedComplaint = self.tuples.sorted { $0.1 > $1.1 }[cellIndexPath.row]
-        dvc.endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-19' and '2017-02-19'&community_board=\(self.communityBoard)&complaint_type=\(selectedComplaint.0)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        
+        if let endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-19' and '2017-02-19'&community_board=\(self.communityBoard)&complaint_type=\(selectedComplaint.0)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        {
+            dvc.endpoint = endpoint
+        }
+        
     }
     
     //MARK: - Actions

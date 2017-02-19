@@ -18,7 +18,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var requests: [ServiceRequest] = []
     
-    var endpoint: String!
+    var endpoint: String?
     
     var regionCalculations: (minLat: CLLocationDegrees, minLong: CLLocationDegrees, maxLat: CLLocationDegrees, maxLong: CLLocationDegrees)?
     
@@ -37,7 +37,9 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        APIRequestManager.manager.getData(endPoint: self.endpoint) { (data: Data?) in
+        guard let endpoint = self.endpoint else { return }
+        
+        APIRequestManager.manager.getData(endPoint: endpoint) { (data: Data?) in
             if let unwrappedData = data {
                 self.requests = ServiceRequest.getServiceRequests(data: unwrappedData)!
                 DispatchQueue.main.async {
