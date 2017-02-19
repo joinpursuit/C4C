@@ -41,7 +41,9 @@ class ComplaintTypesTableViewController: UITableViewController {
                         self.complaintTypes[request.complaintType] = 1
                     }
                 }
-                self.setUpTableViewArrays()
+                DispatchQueue.main.async {
+                    self.setUpTableViewArrays()
+                }
                 
                 print("COMPLAINTS: \(self.complaintTypes)")
                 

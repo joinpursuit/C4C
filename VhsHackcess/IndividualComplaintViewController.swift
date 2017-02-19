@@ -36,7 +36,7 @@ class IndividualComplaintViewController: UIViewController, MKMapViewDelegate {
         label += "\nDate: \(request.createdDate)\nStatus: \(request.status)"
         
         if let resolution = request.resolutionDescription {
-            label += "\nResolution: \(resolution)"
+            label += "\nResolution: \(resolution)\n"
         }
         
         label += "\nCommunity Board: \(request.communityBoard)"
