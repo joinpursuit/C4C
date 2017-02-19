@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04D90522B42CA7ED86F16673 /* Pods_VhsHackcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20022868E8F1B0B637C38DD /* Pods_VhsHackcess.framework */; };
+		2710575DC00E3DFE49ED3296 /* Pods_VhsHackcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D662670F73B128ED0722C40C /* Pods_VhsHackcess.framework */; };
 		4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710959C1E58A2F20031D271 /* APIRequestManager.swift */; };
 		472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */; };
 		47CA0EEC1E5A2C42007FE88D /* C4CLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */; };
@@ -206,10 +206,11 @@
 			name = "DB Views";
 			sourceTree = "<group>";
 		};
-		9F784A90B8B35D2CBCFC9998 /* Frameworks */ = {
+		C1CD339D5D7F4F06E3BEC1BE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B20022868E8F1B0B637C38DD /* Pods_VhsHackcess.framework */,
+				C9717F4B78B7368D20374B39 /* Pods-VhsHackcess.debug.xcconfig */,
+				47B8F3790C76D807AC5D8131 /* Pods-VhsHackcess.release.xcconfig */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,12 +319,12 @@
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		771DEE0CEDA304E02FD3AC0F /* [CP] Check Pods Manifest.lock */ = {

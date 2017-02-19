@@ -12,6 +12,7 @@ import Firebase
 class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var logoutButton: UIButton!
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         if FIRAuth.auth()?.currentUser != nil {
@@ -39,10 +40,12 @@ class UserProfileViewController: UIViewController {
         changeText()
     }
     
+    
     func changeText() {
         if let user = FIRAuth.auth()?.currentUser {
             if let email = user.email {
                 statusLabel.text = "\(email) logged in!"
+                logoutButton.isEnabled = true
             }
         }
     }
@@ -50,7 +53,9 @@ class UserProfileViewController: UIViewController {
     func checkLoggedIn() {
         if FIRAuth.auth()?.currentUser == nil {
             // push profile Instantly
+            logoutButton.isEnabled = false
             performSegue(withIdentifier: "notLoggedIn", sender: self)
+            
         }
     }
     
