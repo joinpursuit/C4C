@@ -21,6 +21,7 @@
 		4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59A1E57E29C00582FBC /* MapViewController.swift */; };
 		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
 		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
+		4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */; };
 		9ED3ED391E58FBBD00A27725 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED381E58FBBD00A27725 /* User.swift */; };
 		9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3A1E58FBFC00A27725 /* Post.swift */; };
 		9ED3ED3D1E58FC5600A27725 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3C1E58FC5600A27725 /* Comment.swift */; };
@@ -47,6 +48,7 @@
 		4B4EA59A1E57E29C00582FBC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualComplaintViewController.swift; sourceTree = "<group>"; };
 		4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMKPointAnnotation.swift; sourceTree = "<group>"; };
 		85A31826A7CB93F65E9D0F0A /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
 		93CB16A242474CF61E1B469D /* Pods-VhsHackcess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.debug.xcconfig"; sourceTree = "<group>"; };
 		966B3764DF4777EF9AB52BEB /* Pods_VhsHackcess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VhsHackcess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 			children = (
 				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
 				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
+				4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */,
 			);
 			name = "Model Objects";
 			path = VhsHackcess;
@@ -339,6 +342,7 @@
 				9ED3ED391E58FBBD00A27725 /* User.swift in Sources */,
 				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
 				4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */,
+				4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
