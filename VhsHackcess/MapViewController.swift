@@ -27,20 +27,26 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setup()
+    }
+    
     // MARK: - Setup
     
     func setup() {
+        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         APIRequestManager.manager.getData(endPoint: self.endpoint) { (data: Data?) in
             if let unwrappedData = data {
                 self.requests = ServiceRequest.getServiceRequests(data: unwrappedData)!
                 DispatchQueue.main.async {
-                    self.setMapPins()
+                    self.setMapPinAndRegion()
                     self.tableView.reloadData()
                 }
             }
         }
     }
-    
 
     // MARK: - Actions
     
@@ -60,56 +66,53 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return requests.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ComplaintDetails", for: indexPath) as! ComplaintDetailsTableViewCell
+        let request = requests[indexPath.row]
+        cell.descriptorLabel.text = request.descriptor
+        cell.timeAndDateLabel.text = request.createdDate
+        return cell
+    }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "ComplaintDetails", for: indexPath) as! ComplaintDetailsTableViewCell
-     let request = requests[indexPath.row]
-     cell.descriptorLabel.text = request.descriptor
-    cell.timeAndDateLabel.text = request.createdDate
-        
-     return cell
-     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        positionMap(to: indexPath, radius: 4000.0)
+    }
     
     // MARK: - Mapview
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let myAnnotation = view.annotation {
-
+        if let myAnnotation = view.annotation as? RequestMKPointAnnotation {
+            let index = myAnnotation.index
+            tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .top, animated: true)
+            tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
         }
-        
-            
-//            let myObject = myAnnotation.managedObject,
-//            let indexPath = fetchedResultsController.indexPath(forObject: myObject) {
-//            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-//            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
-
     }
     
     func positionMap(to indexPath: IndexPath, radius: Double) {
         let request = requests[indexPath.row]
         guard let locationCoordinates = request.coordinates else { return }
         mapView.setRegion(MKCoordinateRegionMakeWithDistance(locationCoordinates, radius, radius), animated: true)
-        
-//        for annotaion in mapView.annotations {
-//            if let myAnnotaion = annotaion as? MKPointAnnotation {
-//               
-//            }
-//        }
+        for annotaion in mapView.annotations {
+            if let myAnnotaion = annotaion as? RequestMKPointAnnotation {
+                if myAnnotaion.index == indexPath.row {
+                    mapView.selectAnnotation(myAnnotaion, animated: true)
+                }
+            }
+        }
     }
     
-    // MARK: - Helper functions
-    
-    func setMapPins() {
+    func setMapPinAndRegion() {
         mapView.removeAnnotations(mapView.annotations)
-        for request in requests {
+        for (index, request) in requests.enumerated() {
             guard let coordinates = request.coordinates else { continue }
-            let pinAnnotation = MKPointAnnotation()
+            
+            let pinAnnotation = RequestMKPointAnnotation()
+            pinAnnotation.coordinate = coordinates
             pinAnnotation.title = request.descriptor
             pinAnnotation.subtitle = request.createdDate
-            pinAnnotation.coordinate = coordinates
+            pinAnnotation.index = index
             mapView.addAnnotation(pinAnnotation)
- 
+            
             if let calc = regionCalculations {
                 if coordinates.latitude < calc.minLat {
                     regionCalculations?.minLat = coordinates.latitude
@@ -126,22 +129,21 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             } else {
                 regionCalculations = (minLat: coordinates.latitude, minLong: coordinates.longitude, maxLat: coordinates.latitude, maxLong: coordinates.longitude)
             }
+            
+            guard let calc = regionCalculations else { return }
+            
+            let midLat = (calc.maxLat + calc.minLat) / 2
+            let midLong = (calc.maxLong + calc.minLong) / 2
+            let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(midLat), longitude: CLLocationDegrees(midLong))
+            
+            let latSpan = calc.maxLat - calc.minLat
+            let longSpan = calc.maxLong - calc.minLong
+            
+            let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(latSpan), longitudeDelta: CLLocationDegrees(longSpan))
+            
+            let mkCoordinateRegion = MKCoordinateRegion(center: center, span: span)
+            
+            self.mapView.setRegion(mkCoordinateRegion, animated: true)
         }
-        setMapRegion()
-    }
-    
-    func setMapRegion() {
-        let midLat = ((regionCalculations?.maxLat)! + (regionCalculations?.minLat)!) / 2
-        let midLong = ((regionCalculations?.maxLong)! + (regionCalculations?.minLong)!) / 2
-        let center = CLLocationCoordinate2D(latitude: CLLocationDegrees(midLat), longitude: CLLocationDegrees(midLong))
-        
-        let latSpan = (regionCalculations?.maxLat)! - (regionCalculations?.minLat)!
-        let longSpan = (regionCalculations?.maxLong)! - (regionCalculations?.minLong)!
-        
-        let span = MKCoordinateSpan(latitudeDelta: CLLocationDegrees(latSpan), longitudeDelta: CLLocationDegrees(longSpan))
-        
-        let mkCoordinateRegion = MKCoordinateRegion(center: center, span: span)
-        
-        self.mapView.setRegion(mkCoordinateRegion, animated: true)
     }
 }
