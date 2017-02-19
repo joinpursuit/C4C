@@ -32,15 +32,36 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
             Community.community.communityName = boardNumber
         }
     }
+    var logoView: C4CLogoView!
     
     //MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //initialize and add View
+        self.logoView = C4CLogoView(frame: CGRect(x: 0.0, y: 0.0, width: 250.0, height: 250.0))
+        self.view.addSubview(self.logoView)
+        self.logoView.center = self.view.center
+        
+        //animate logoView
+        
         //minimize keyboard when tapping view
         setUpMinimizeKeyboardTapGesture()
         
         self.automaticallyAdjustsScrollViewInsets = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //rotation animation
+        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
+        animation.duration = 3
+        animation.fromValue = 0
+        animation.toValue = CGFloat.pi * 2.0
+        animation.repeatCount = .infinity
+        
+        self.logoView.imageView.layer.add(animation, forKey: "transform.rotation.y")
     }
     
     func setUpMinimizeKeyboardTapGesture() {
@@ -51,6 +72,19 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
     
     func handleTap() {
         self.addressTextField.resignFirstResponder()
+    }
+    
+    func shrinkImageViewAnimation() {
+        UIView.animate(withDuration: 1.5, animations: {
+            self.logoView.center = self.view.center
+            self.logoView.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+            self.logoView.alpha = 0.0
+        }) { (bool) in
+            self.logoView.imageView.layer.removeAllAnimations()
+            self.logoView.layer.removeAllAnimations()
+            self.logoView.imageView.removeFromSuperview()
+            self.logoView.removeFromSuperview()
+        }
     }
     
     //MARK: - TextField Delegate
@@ -140,6 +174,22 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
                             print("Borough: \(borough)")
                             print("Community Board: \(communityBoardNumber)")
                             
+                            DispatchQueue.main.async {
+                                
+                                CATransaction.begin()
+                                
+                                CATransaction.setCompletionBlock({
+                                    self.logoView.imageView.layer.removeAllAnimations()
+                                    self.logoView.layer.removeAllAnimations()
+                                    self.logoView.imageView.removeFromSuperview()
+                                    self.logoView.removeFromSuperview()
+                                })
+                                
+                                self.shrinkImageViewAnimation()
+                                
+                                CATransaction.commit()
+                                
+                            }
                             
                             switch borough {
                             case "QUEENS":
