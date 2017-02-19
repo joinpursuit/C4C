@@ -54,8 +54,6 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         self.view.addSubview(self.logoView)
         self.logoView.center = self.view.center
         
-        //animate logoView
-        
         //minimize keyboard when tapping view
         setUpMinimizeKeyboardTapGesture()
         
@@ -198,5 +196,5 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
             dvc.communityBoard = self.boardNumber
         }
     }
-
+    
 }
