@@ -77,13 +77,16 @@ class ComplaintTypesTableViewController: UITableViewController {
         cell.textLabel?.text = "\(complaint.0) (\(complaint.1))"
         return cell
     }
-
-     //MARK: - Navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dvc = segue.destination as? MapViewController {
-            //pass in endpoint parameters
-        }
-     }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tappedCell = sender as? UITableViewCell, // change if using custom class
+            let dvc = segue.destination as? MapViewController,
+            let cellIndexPath = self.tableView.indexPath(for: tappedCell)
+            else { return }
+        let selectedComplaint = self.tuples.sorted { $0.1 > $1.1 }[cellIndexPath.row]
+        dvc.endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-19' and '2017-02-19'&community_board=\(self.communityBoard)&complaint_type=\(selectedComplaint.0)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+    }
     
     //MARK: - Actions
     @IBAction func filterTapped(_ sender: UIBarButtonItem) {

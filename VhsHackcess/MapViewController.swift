@@ -18,7 +18,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var requests: [ServiceRequest] = []
     
-    let endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-18' and '2017-02-18'&community_board=03 QUEENS&complaint_type=Illegal Parking&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+    var endpoint: String!
     
     var regionCalculations: (minLat: CLLocationDegrees, minLong: CLLocationDegrees, maxLat: CLLocationDegrees, maxLong: CLLocationDegrees)?
     
