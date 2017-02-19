@@ -1,60 +1,72 @@
 //
-//  ComplaintTypesTableViewController.swift
+//  MessageBoardTableViewController.swift
 //  VhsHackcess
 //
-//  Created by Sabrina Ip on 2/17/17.
+//  Created by Victor Zhong on 2/18/17.
 //  Copyright © 2017 C4Q. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class ComplaintTypesTableViewController: UITableViewController {
-    //MARK: - Properties
-    var communityBoard: String = "" {
-        didSet {
-            self.openDataEndpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-18' and '2017-02-18'&community_board=\(self.communityBoard)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        }
-    }
-    var requests: [ServiceRequest] = []
-    //    let openDataEndpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-18' and '2017-02-18'&community_board=03 BRONX&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-    var openDataEndpoint: String = ""
+class MessageBoardTableViewController: UITableViewController {
+    
+    var posts = [Post]()
+    var communityBoroughCode: String?
+    var databaseRef: FIRDatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Testing API call
-        APIRequestManager.manager.getData(endPoint: self.openDataEndpoint) { (data: Data?) in
-
-            if let cbRequests = ServiceRequest.getServiceRequests(data: data!) {
-                self.requests = cbRequests
-                print(self.openDataEndpoint)
-            }
+        if let community = communityBoroughCode {
+            databaseRef = FIRDatabase.database().reference().child(community)
+            self.title = "\(community) Forums"
             
+            populatePosts()
         }
-        
-        
     }
     
-    //MARK: - Table view data source
+    
+    // MARK: - Functions 
+    
+    func populatePosts() {
+        if let _ = communityBoroughCode {
+            databaseRef?.observeSingleEvent(of: .value , with: { (snapshot) in
+                
+                for child in snapshot.children {
+                    if let snap = child as? FIRDataSnapshot,
+                        let valueDict = snap.value as? [String : Any] {
+                        let post = Post(uid: valueDict["uid"] as! String, author: valueDict["author"] as! String, title: valueDict["title"] as! String, body: valueDict["body"] as! String, commentCount: valueDict["commentCount"] as! Int)
+                        
+                        self.posts.append(post)
+                    }
+                }
+                self.tableView.reloadData()
+            })
+        }
+    }
+    
+    // MARK: - Table view data source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
     
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseID", for: indexPath) as! PostTableViewCell
+        
+        let post = posts[indexPath.row]
+        cell.topicHeadline.text = post.title
+        cell.postCommentLabel.text = post.body
+        cell.infoLabel.text = "By \(post.author) - \(post.commentCount) replies"
+        
+        return cell
+    }
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -100,10 +112,5 @@ class ComplaintTypesTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-    //MARK: - Actions
-    
-    @IBAction func filterTapped(_ sender: UIBarButtonItem) {
-    }
     
 }
