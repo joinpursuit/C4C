@@ -13,13 +13,37 @@ class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
     
-    
-    
+    @IBAction func logoutButtonTapped(_ sender: UIButton) {
+        if FIRAuth.auth()?.currentUser != nil {
+            do {
+                try FIRAuth.auth()?.signOut()
+                statusLabel.text = "Not Logged In"
+                _ = self.navigationController?.popViewController(animated: true)
+            }
+            catch {
+                print(error)
+            }
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLoggedIn()
+        changeText()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        changeText()
+    }
+    
+    func changeText() {
         if let user = FIRAuth.auth()?.currentUser {
-            statusLabel.text = user.displayName
+            if let email = user.email {
+                statusLabel.text = "\(email) logged in!"
+            }
         }
     }
     

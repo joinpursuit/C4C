@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
                 }
                 if user != nil {
                     self.showOKAlert(title: "\((user?.email)!) Created!", message: "Good Job!", dismissCompletion: {
-                        action in self.performSegue(withIdentifier: "userProfile", sender: self)
+                        action in self.navigationController?.popViewController(animated: true)
                     })
                 }
                 else {
@@ -62,7 +62,8 @@ class LoginViewController: UIViewController {
                 }
                 if user != nil {
                     self.showOKAlert(title: "\((user?.email)!) Logged In!", message: nil, dismissCompletion: {
-                        action in self.performSegue(withIdentifier: "userProfile", sender: self)
+                        //                        action in self.performSegue(withIdentifier: "userProfile", sender: self)
+                        action in self.navigationController?.popViewController(animated: true)
                     })
                 }
                 else {
