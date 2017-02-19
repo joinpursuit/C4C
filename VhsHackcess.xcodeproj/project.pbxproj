@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710959C1E58A2F20031D271 /* APIRequestManager.swift */; };
 		472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */; };
+		47CA0EEC1E5A2C42007FE88D /* C4CLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */; };
 		4B1B88741E57FE950091CA93 /* Community Districts.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B88731E57FE950091CA93 /* Community Districts.geojson */; };
 		4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5801E57CE2300582FBC /* AppDelegate.swift */; };
 		4B4EA5861E57CE2300582FBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5841E57CE2300582FBC /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		28A5AAA631A166A5D5768AA2 /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
 		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C4CLogoView.swift; sourceTree = "<group>"; };
 		4B1B88731E57FE950091CA93 /* Community Districts.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Community Districts.geojson"; sourceTree = "<group>"; };
 		4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VhsHackcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4EA5801E57CE2300582FBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		4B4EA59F1E57E2DB00582FBC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */,
 				4B4EA5961E57E26200582FBC /* ComplaintTypesTableViewCell.swift */,
 				4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */,
 			);
@@ -336,6 +339,7 @@
 				4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */,
 				9ED3ED3D1E58FC5600A27725 /* Comment.swift in Sources */,
 				9ED3ED4A1E5922C400A27725 /* MessageBoardTableViewController.swift in Sources */,
+				47CA0EEC1E5A2C42007FE88D /* C4CLogoView.swift in Sources */,
 				4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */,
 				9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */,
 				4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */,
