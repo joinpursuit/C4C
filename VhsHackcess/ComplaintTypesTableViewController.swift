@@ -41,7 +41,9 @@ class ComplaintTypesTableViewController: UITableViewController {
                         self.complaintTypes[request.complaintType] = 1
                     }
                 }
-                self.setUpTableViewArrays()
+                DispatchQueue.main.async {
+                    self.setUpTableViewArrays()
+                }
                 
                 print("COMPLAINTS: \(self.complaintTypes)")
                 
@@ -89,6 +91,7 @@ class ComplaintTypesTableViewController: UITableViewController {
         if let endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-19' and '2017-02-19'&community_board=\(self.communityBoard)&complaint_type=\(selectedComplaint.0)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         {
             dvc.endpoint = endpoint
+            dvc.complaintType = selectedComplaint.0
         }
         
     }
