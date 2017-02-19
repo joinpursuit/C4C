@@ -25,9 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		40B8700B09107D1EAF5EA09D /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
-		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestManager.swift; path = VhsHackcess/APIRequestManager.swift; sourceTree = "<group>"; };
-		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = VhsHackcess/ServiceRequest.swift; sourceTree = "<group>"; };
+		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		4B1B88731E57FE950091CA93 /* Community Districts.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Community Districts.geojson"; sourceTree = "<group>"; };
 		4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VhsHackcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4EA5801E57CE2300582FBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +58,8 @@
 		472C27CB1E58A97D007CE152 /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
+				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 			);
 			name = "Model Objects";
 			path = VhsHackcess;
@@ -69,8 +70,6 @@
 			children = (
 				4B4EA57F1E57CE2300582FBC /* VhsHackcess */,
 				472C27CB1E58A97D007CE152 /* Model Objects */,
-				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
-				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 				4B4EA5A01E57E2EE00582FBC /* Supporting Files */,
 				4B4EA57E1E57CE2300582FBC /* Products */,
 			);
