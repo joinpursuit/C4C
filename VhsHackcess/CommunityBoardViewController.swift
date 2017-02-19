@@ -24,9 +24,9 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
             print(url)
             let myRequest = URLRequest(url: url)
             self.cbWebView.loadRequest(myRequest)
-            
         }
     }
+    var boardNumber: String!
     
     //MARK: Methods
     override func viewDidLoad() {
@@ -139,16 +139,22 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
                             switch borough {
                             case "QUEENS":
                                 self.communityBoardCode = "qn" + communityBoardNumber
+                                self.boardNumber = "\(communityBoardNumber) QUEENS"
                             case "BROOKLYN":
                                 self.communityBoardCode = "bk" + communityBoardNumber
+                                self.boardNumber = "\(communityBoardNumber) BROOKLYN"
                             case "MANHATTAN":
                                 self.communityBoardCode = "mn" + communityBoardNumber
+                                self.boardNumber = "\(communityBoardNumber) MANHATTAN"
                             case "STATEN ISLAND":
                                 self.communityBoardCode = "si" + communityBoardNumber
+                                self.boardNumber = "\(communityBoardNumber) STATEN ISLAND"
                             case "BRONX":
                                 self.communityBoardCode = "bk" + communityBoardNumber
+                                self.boardNumber = "\(communityBoardNumber) BRONX"
                             default:
                                 self.communityBoardCode = "qn" + communityBoardNumber
+                                self.boardNumber = "\(communityBoardNumber) QUEENS"
                             }
                             
                         }
@@ -160,6 +166,13 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
             }
         }
         self.addressTextField.resignFirstResponder()
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? ComplaintTypesTableViewController {
+            dvc.communityBoard = self.boardNumber
+        }
     }
     
 }
