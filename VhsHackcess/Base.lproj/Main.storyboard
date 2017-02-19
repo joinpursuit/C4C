@@ -200,7 +200,7 @@
             <objects>
                 <navigationController id="8z4-KJ-txs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="KDe-e8-oz1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Wj1-zS-DTS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wj1-zS-DTS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -231,7 +231,7 @@
                                 </connections>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M9r-OP-7VQ">
-                                <rect key="frame" x="16" y="342" width="343" height="220"/>
+                                <rect key="frame" x="16" y="342" width="343" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ComplaintDetails" rowHeight="69" id="9na-pi-JWR" customClass="ComplaintDetailsTableViewCell" customModule="VhsHackcess" customModuleProvider="target">
@@ -282,28 +282,14 @@
                                     <outlet property="delegate" destination="z2G-kA-jYR" id="Fga-sJ-D4Y"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-wl-R4R">
-                                <rect key="frame" x="16" y="570" width="343" height="29"/>
-                                <segments>
-                                    <segment title="Map and Data"/>
-                                    <segment title="Data Only"/>
-                                    <segment title="Map Only"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedControlChanged:" destination="z2G-kA-jYR" eventType="valueChanged" id="8Kq-wz-djr"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pHa-lR-CMW" firstAttribute="trailing" secondItem="KHj-rP-bxo" secondAttribute="trailingMargin" id="0Df-hO-NXP"/>
+                            <constraint firstItem="knm-Yi-qht" firstAttribute="top" secondItem="M9r-OP-7VQ" secondAttribute="bottom" constant="8" id="73k-56-v9F"/>
                             <constraint firstItem="M9r-OP-7VQ" firstAttribute="top" secondItem="pHa-lR-CMW" secondAttribute="bottom" constant="8" id="9CD-tf-Boc"/>
-                            <constraint firstItem="cJG-wl-R4R" firstAttribute="leading" secondItem="KHj-rP-bxo" secondAttribute="leadingMargin" id="9Ov-9W-fw4"/>
                             <constraint firstItem="M9r-OP-7VQ" firstAttribute="trailing" secondItem="KHj-rP-bxo" secondAttribute="trailingMargin" id="APa-rN-aoZ"/>
-                            <constraint firstItem="knm-Yi-qht" firstAttribute="top" secondItem="cJG-wl-R4R" secondAttribute="bottom" constant="20" id="C4L-El-QAi"/>
-                            <constraint firstItem="cJG-wl-R4R" firstAttribute="trailing" secondItem="KHj-rP-bxo" secondAttribute="trailingMargin" id="MA0-lJ-zGZ"/>
                             <constraint firstItem="pHa-lR-CMW" firstAttribute="bottom" secondItem="KHj-rP-bxo" secondAttribute="centerY" id="QSl-DO-Ncp"/>
-                            <constraint firstItem="cJG-wl-R4R" firstAttribute="top" secondItem="M9r-OP-7VQ" secondAttribute="bottom" constant="8" id="Uyz-fp-8ZZ"/>
                             <constraint firstItem="pHa-lR-CMW" firstAttribute="top" secondItem="1ks-H8-ayv" secondAttribute="bottom" constant="8" id="YK8-0R-5kA"/>
                             <constraint firstItem="M9r-OP-7VQ" firstAttribute="leading" secondItem="KHj-rP-bxo" secondAttribute="leadingMargin" id="d5b-Dk-3Jd"/>
                             <constraint firstItem="pHa-lR-CMW" firstAttribute="leading" secondItem="KHj-rP-bxo" secondAttribute="leadingMargin" id="xLG-jr-M21"/>
@@ -318,7 +304,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="pHa-lR-CMW" id="CKy-my-YXp"/>
-                        <outlet property="segmentedControl" destination="cJG-wl-R4R" id="gvM-yU-iRD"/>
                         <outlet property="tableView" destination="M9r-OP-7VQ" id="zEk-Nd-PdB"/>
                     </connections>
                 </viewController>
@@ -460,7 +445,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Kq-JO-kBY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="UPo-Zp-bqz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsd-Mb-SnS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qsd-Mb-SnS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
