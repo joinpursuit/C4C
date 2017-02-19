@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R6J-1e-S5x">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R6J-1e-S5x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,57 +23,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Address Here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-po-eau">
-                                <rect key="frame" x="16" y="72" width="287" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SOM-tD-MhG"/>
-                                </connections>
-                            </textField>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-4j-t28">
+                                <rect key="frame" x="0.0" y="64" width="375" height="486"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-pH-hbM">
-                                <rect key="frame" x="144" y="318" width="88" height="30"/>
+                                <rect key="frame" x="143" y="558" width="88" height="30"/>
                                 <state key="normal" title="Get 311 Data"/>
                                 <connections>
-                                    <action selector="getDataTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ev-Ma-TCg"/>
                                     <segue destination="ljE-xK-4QR" kind="show" id="0Z2-eg-kyq"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" text="Community Board Information and website" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dhS-Xa-7f3">
-                                <rect key="frame" x="16" y="110" width="343" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7R-fz-OJq">
-                                <rect key="frame" x="311" y="72" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IeR-yw-eVC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Cba-po-eau" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Lf-sb-yZK"/>
-                            <constraint firstItem="v7R-fz-OJq" firstAttribute="leading" secondItem="Cba-po-eau" secondAttribute="trailing" constant="8" id="29V-2K-qli"/>
-                            <constraint firstItem="v7R-fz-OJq" firstAttribute="centerY" secondItem="Cba-po-eau" secondAttribute="centerY" id="JMR-8f-LWh"/>
-                            <constraint firstItem="iNm-pH-hbM" firstAttribute="top" secondItem="dhS-Xa-7f3" secondAttribute="bottom" constant="8" id="U81-HI-Cc1"/>
-                            <constraint firstItem="dhS-Xa-7f3" firstAttribute="top" secondItem="Cba-po-eau" secondAttribute="bottom" constant="8" id="Ut2-nW-G3a"/>
-                            <constraint firstItem="dhS-Xa-7f3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YOC-TC-cZA"/>
-                            <constraint firstItem="v7R-fz-OJq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aM1-oD-iKZ"/>
-                            <constraint firstItem="iNm-pH-hbM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c9f-8g-6Ly"/>
-                            <constraint firstItem="Cba-po-eau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="cUX-41-362"/>
-                            <constraint firstItem="dhS-Xa-7f3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="f3h-3i-22t"/>
-                            <constraint firstItem="iNm-pH-hbM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fpH-uR-DJI"/>
+                            <constraint firstAttribute="trailing" secondItem="Y0B-4j-t28" secondAttribute="trailing" id="B7q-0y-qUa"/>
+                            <constraint firstItem="Y0B-4j-t28" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bbh-2H-q8G"/>
+                            <constraint firstItem="iNm-pH-hbM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G5n-91-df5"/>
+                            <constraint firstItem="iNm-pH-hbM" firstAttribute="top" secondItem="Y0B-4j-t28" secondAttribute="bottom" constant="8" id="VNg-pN-dLY"/>
+                            <constraint firstItem="Y0B-4j-t28" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XAB-GA-zdV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iNm-pH-hbM" secondAttribute="bottom" constant="30" id="b0o-DE-GJU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yfe-2W-9dN"/>
+                    <navigationItem key="navigationItem" id="Yfe-2W-9dN">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="Cba-po-eau">
+                            <rect key="frame" x="18" y="7" width="287" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            <connections>
+                                <outlet property="delegate" destination="BYZ-38-t0r" id="SOM-tD-MhG"/>
+                            </connections>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0EF-ZL-Fnb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v7R-fz-OJq">
+                                <rect key="frame" x="311" y="7" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IeR-yw-eVC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="Cba-po-eau" id="AT7-dc-xGb"/>
-                        <outlet property="infoTextView" destination="dhS-Xa-7f3" id="xmr-25-9SY"/>
+                        <outlet property="cbWebView" destination="Y0B-4j-t28" id="d2R-Kl-j07"/>
+                        <outlet property="searchButton" destination="v7R-fz-OJq" id="2qz-HM-ywM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
