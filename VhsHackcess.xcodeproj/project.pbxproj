@@ -12,6 +12,7 @@
 		472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */; };
 		47CA0EEC1E5A2C42007FE88D /* C4CLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */; };
 		4B1B88741E57FE950091CA93 /* Community Districts.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B88731E57FE950091CA93 /* Community Districts.geojson */; };
+		4B1EF7BB1E5A50A800EE1748 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EF7BA1E5A50A800EE1748 /* WebViewController.swift */; };
 		4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5801E57CE2300582FBC /* AppDelegate.swift */; };
 		4B4EA5861E57CE2300582FBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5841E57CE2300582FBC /* Main.storyboard */; };
 		4B4EA5881E57CE2300582FBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4EA5871E57CE2300582FBC /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C4CLogoView.swift; sourceTree = "<group>"; };
 		4B1B88731E57FE950091CA93 /* Community Districts.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Community Districts.geojson"; sourceTree = "<group>"; };
+		4B1EF7BA1E5A50A800EE1748 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4B4EA57D1E57CE2300582FBC /* VhsHackcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VhsHackcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4EA5801E57CE2300582FBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4EA5851E57CE2300582FBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4B4EA5921E57E21A00582FBC /* CommunityBoardViewController.swift */,
+				4B1EF7BA1E5A50A800EE1748 /* WebViewController.swift */,
 				4B4EA5941E57E24600582FBC /* ComplaintTypesTableViewController.swift */,
 				4B4EA59A1E57E29C00582FBC /* MapViewController.swift */,
 				4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */,
@@ -202,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				C9717F4B78B7368D20374B39 /* Pods-VhsHackcess.debug.xcconfig */,
-				47B8F3790C76D807AC5D8131 /* Pods-VhsHackcess.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -332,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1EF7BB1E5A50A800EE1748 /* WebViewController.swift in Sources */,
 				4B4EA5951E57E24600582FBC /* ComplaintTypesTableViewController.swift in Sources */,
 				4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */,
 				9ED3ED461E59061F00A27725 /* PostTableViewCell.swift in Sources */,
@@ -483,7 +486,6 @@
 		};
 		4B4EA5911E57CE2300582FBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47B8F3790C76D807AC5D8131 /* Pods-VhsHackcess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VhsHackcess/Info.plist;
