@@ -74,6 +74,7 @@ class ServiceRequest {
                 
                 let incidentAddress = dict["incident_address"] as? String ?? "N.A."
                 let location = dict["location"] as? [String: Any]
+                let descriptor = dict["descriptor"] as? String ?? "N.A."
                 
                 var coordinates: CLLocationCoordinate2D?
                 if let coord = location?["coordinates"] as? [Double],
@@ -90,8 +91,6 @@ class ServiceRequest {
                 guard let complaintType = dict["complaint_type"] as? String else { throw ParsingErrors.complaintTypeError }
                 
                 guard let createdDate = dict["created_date"] as? String else { throw ParsingErrors.createdDateError }
-                
-                guard let descriptor = dict["descriptor"] as? String else { throw ParsingErrors.descriptorError }
                 
                 guard let status = dict["status"] as? String else { throw ParsingErrors.statusError }
                 
