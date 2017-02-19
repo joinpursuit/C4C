@@ -179,6 +179,7 @@
                                     <outlet property="postCommentLabel" destination="Xtv-bJ-dSh" id="WVv-v7-J7p"/>
                                     <outlet property="profileImage" destination="ClP-3G-HuB" id="QNn-Ge-6Ch"/>
                                     <outlet property="topicHeadline" destination="E39-ZU-uc8" id="GNk-eY-NMp"/>
+                                    <segue destination="Hh0-Ve-vTn" kind="show" identifier="readSegue" id="GOi-uX-P4X"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -188,12 +189,75 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Forum" id="HgC-mW-y0U">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ELL-Yj-JFX"/>
+                        <barButtonItem key="leftBarButtonItem" title="Me" id="icF-Y4-tDg">
+                            <connections>
+                                <segue destination="NBH-WE-Joa" kind="show" identifier="userSegue" id="hha-wx-euh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="ELL-Yj-JFX">
+                            <connections>
+                                <segue destination="5IL-MT-pX6" kind="show" identifier="postSegue" id="0lU-93-qGs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lt-od-4uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1989.5999999999999" y="891.90404797601207"/>
+        </scene>
+        <!--Account Info-->
+        <scene sceneID="aes-di-dW5">
+            <objects>
+                <viewController title="Account Info" id="NBH-WE-Joa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gkN-dV-WeX"/>
+                        <viewControllerLayoutGuide type="bottom" id="WKz-AA-Yi9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zfG-XY-EEn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVG-We-mZr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1990" y="1654"/>
+        </scene>
+        <!--Read Post-->
+        <scene sceneID="PQZ-lG-QfJ">
+            <objects>
+                <viewController title="Read Post" id="Hh0-Ve-vTn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FJy-A2-uwO"/>
+                        <viewControllerLayoutGuide type="bottom" id="rRC-1l-Hdx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ECl-Mj-ezq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdb-bu-bWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2801" y="1654"/>
+        </scene>
+        <!--Compose Post-->
+        <scene sceneID="bwh-hV-0xT">
+            <objects>
+                <viewController title="Compose Post" id="5IL-MT-pX6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xtv-XG-wK1"/>
+                        <viewControllerLayoutGuide type="bottom" id="au5-WS-87j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G0y-1n-fPP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bx3-C3-62q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2801" y="892"/>
         </scene>
         <!--Item-->
         <scene sceneID="UGw-5F-aon">
