@@ -10,16 +10,24 @@ import UIKit
 
 class ComplaintTypesTableViewController: UITableViewController {
     //MARK: - Properties
+    var communityBoard: String = "" {
+        didSet {
+            self.openDataEndpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-18' and '2017-02-18'&community_board=\(self.communityBoard)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        }
+    }
     var requests: [ServiceRequest] = []
+    //    let openDataEndpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-18' and '2017-02-18'&community_board=03 BRONX&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+    var openDataEndpoint: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Testing API call
+        APIRequestManager.manager.getData(endPoint: self.openDataEndpoint) { (data: Data?) in
 
-        APIRequestManager.manager.getData(endPoint: APIRequestManager.manager.openDataEndpoint) { (data: Data?) in
             if let cbRequests = ServiceRequest.getServiceRequests(data: data!) {
                 self.requests = cbRequests
+                print(self.openDataEndpoint)
             }
             
         }
