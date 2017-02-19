@@ -73,6 +73,8 @@
 		472C27CB1E58A97D007CE152 /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
+				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 			);
 			name = "Model Objects";
 			path = VhsHackcess;
@@ -83,8 +85,6 @@
 			children = (
 				4B4EA57F1E57CE2300582FBC /* VhsHackcess */,
 				472C27CB1E58A97D007CE152 /* Model Objects */,
-				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
-				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 				4B4EA5A01E57E2EE00582FBC /* Supporting Files */,
 				4B4EA57E1E57CE2300582FBC /* Products */,
 				56FD381A16B76067032A90D3 /* Pods */,
