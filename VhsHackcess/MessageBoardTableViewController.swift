@@ -19,7 +19,8 @@ class MessageBoardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let community = communityBoroughCode {
+        if let community = Community.community.communityName {
+            communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)
             self.title = "\(community) Forums"
             
@@ -27,8 +28,24 @@ class MessageBoardTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkChosenCommunity()
+    }
     
-    // MARK: - Functions 
+    // MARK: - Functions
+    
+    func checkChosenCommunity() {
+        if communityBoroughCode != Community.community.communityName {
+            communityBoroughCode = Community.community.communityName
+            if let community = communityBoroughCode {
+                databaseRef = FIRDatabase.database().reference().child(community)
+                self.title = "\(community) Forums"
+            }
+            
+            populatePosts()
+        }
+    }
     
     func populatePosts() {
         if let _ = communityBoroughCode {
@@ -38,10 +55,10 @@ class MessageBoardTableViewController: UITableViewController {
                     if let snap = child as? FIRDataSnapshot,
                         let valueDict = snap.value as? [String : Any] {
                         let post = Post(uid: valueDict["uid"] as! String, author: valueDict["author"] as! String, title: valueDict["title"] as! String, body: valueDict["body"] as! String, commentCount: valueDict["commentCount"] as! Int)
-                        
                         self.posts.append(post)
                     }
                 }
+                
                 self.tableView.reloadData()
             })
         }
@@ -68,42 +85,6 @@ class MessageBoardTableViewController: UITableViewController {
         return cell
     }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
     /*
      // MARK: - Navigation
      
@@ -113,5 +94,5 @@ class MessageBoardTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
+        
 }
