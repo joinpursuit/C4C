@@ -13,15 +13,17 @@ class Post {
     var author: String
     var title: String
     var body: String
+    var commentCount: Int
     
-    init(uid: String, author: String, title: String, body: String) {
+    init(uid: String, author: String, title: String, body: String, commentCount: Int) {
         self.uid = uid
         self.author = author
         self.title = title
         self.body = body
+        self.commentCount = commentCount
     }
     
     convenience init() {
-        self.init(uid: "", author: "", title: "", body:  "")
+        self.init(uid: "", author: "", title: "", body:  "", commentCount: 0)
     }
 }
