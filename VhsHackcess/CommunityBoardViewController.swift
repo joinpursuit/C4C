@@ -24,9 +24,14 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
             print(url)
             let myRequest = URLRequest(url: url)
             self.cbWebView.loadRequest(myRequest)
+            Community.community.communityID = self.communityBoardCode
         }
     }
-    var boardNumber: String!
+    var boardNumber: String! {
+        didSet {
+            Community.community.communityName = boardNumber
+        }
+    }
     
     //MARK: Methods
     override func viewDidLoad() {
@@ -174,5 +179,5 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
             dvc.communityBoard = self.boardNumber
         }
     }
-    
+
 }

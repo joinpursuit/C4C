@@ -18,7 +18,8 @@ class MessageBoardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let community = communityBoroughCode {
+        if let community = Community.community.communityName {
+            communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)
             self.title = "\(community) Forums"
             
@@ -26,8 +27,24 @@ class MessageBoardTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkChosenCommunity()
+    }
     
-    // MARK: - Functions 
+    // MARK: - Functions
+    
+    func checkChosenCommunity() {
+        if communityBoroughCode != Community.community.communityName {
+            communityBoroughCode = Community.community.communityName
+            if let community = communityBoroughCode {
+                databaseRef = FIRDatabase.database().reference().child(community)
+                self.title = "\(community) Forums"
+            }
+            
+            populatePosts()
+        }
+    }
     
     func populatePosts() {
         if let _ = communityBoroughCode {
