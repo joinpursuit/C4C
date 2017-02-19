@@ -14,16 +14,27 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var cbWebView: UIWebView!
+    // @IBOutlet weak var cbWebView: UIWebView!
+    @IBOutlet weak var communityBoardImageView: UIImageView!
     
     //MARK: - Properties
     var communityBoardCode: String = "" {
         didSet {
-            let myURL = URL(string: "https://www1.nyc.gov/assets/planning/images/content/pages/community/community-portal/profile/overview/\(self.communityBoardCode).gif")
+            let urlString = "https://www1.nyc.gov/assets/planning/images/content/pages/community/community-portal/profile/overview/\(self.communityBoardCode).gif"
+            let myURL = URL(string: urlString)
             guard let url = myURL else { return }
             print(url)
             let myRequest = URLRequest(url: url)
-            self.cbWebView.loadRequest(myRequest)
+            
+            APIRequestManager.manager.getData(endPoint: urlString) { (data) in
+                if let validData = data {
+                    DispatchQueue.main.async {
+                        self.communityBoardImageView.image = UIImage(data: validData)
+                        self.communityBoardImageView.isUserInteractionEnabled = true
+                    }
+                }
+            }
+            //self.cbWebView.loadRequest(myRequest)
             Community.community.communityID = self.communityBoardCode
         }
     }
@@ -94,48 +105,6 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         
         return true
     }
-    
-    /* NOT USING THESE FUNCTIONS IF VIC'S GET REQUEST WORKS
-     func getDistricts() {
-     guard let geoJSONURL = Bundle.main.url(forResource: "Community Districts", withExtension: "geojson"),
-     let jsonData = try? Data(contentsOf: geoJSONURL) else { return }
-     
-     do {
-     let parsedObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-     guard let parsedObjectCasted = parsedObject as? [String: Any],
-     let features = parsedObjectCasted["features"] as? [[String: Any]] else {
-     return
-     }
-     
-     for each in features {
-     guard let properties = each["properties"] as? [String:Any],
-     let boroCd = properties["boro_cd"] as? String else { continue }
-     
-     guard let geometry = each["geometry"] as? [String: AnyObject],
-     let coord = geometry["coordinates"] as? [[[[Double]]]] else { continue }
-     let coordinatesArray = coord[0][0]
-     
-     var coordinates: [MKMapPoint] = []
-     for coordinate in coordinatesArray {
-     let mkMapPoint = MKMapPoint(x: coordinate[0], y: coordinate[1])
-     coordinates.append(mkMapPoint)
-     }
-     
-     let bufferPointer = UnsafeBufferPointer(start: coordinates, count: coordinates.count)
-     var polygon = MKPolygon(points: bufferPointer.baseAddress!, count: coordinates.count)
-     
-     let district = (boroCd, polygon)
-     districts.append(district)
-     }
-     } catch {
-     print(error)
-     }
-     }
-     
-     func isInsidePolygon(point: MKMapPoint, polygon: MKPolygon) -> Bool {
-     return true
-     }
-     */
     
     //MARK: - Actions
     @IBAction func searchButtonTapped(_ sender: UIButton) {
