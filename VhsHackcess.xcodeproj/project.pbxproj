@@ -24,6 +24,8 @@
 		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
 		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
 		4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */; };
+		9E3C7BEC1E5A1C4D00CF229F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C7BEB1E5A1C4D00CF229F /* LoginViewController.swift */; };
+		9E3C7BEE1E5A23E600CF229F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C7BED1E5A23E600CF229F /* UserProfileViewController.swift */; };
 		9E56B5BD1E59570200C476EB /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56B5BC1E59570200C476EB /* Community.swift */; };
 		9ED3ED391E58FBBD00A27725 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED381E58FBBD00A27725 /* User.swift */; };
 		9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3A1E58FBFC00A27725 /* Post.swift */; };
@@ -52,6 +54,10 @@
 		4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualComplaintViewController.swift; sourceTree = "<group>"; };
 		4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMKPointAnnotation.swift; sourceTree = "<group>"; };
+		8200F774E43FE94C59A0BFBF /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
+		944CFB8A1A0D2A9BC928F241 /* Pods-VhsHackcess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.debug.xcconfig"; sourceTree = "<group>"; };
+		9E3C7BEB1E5A1C4D00CF229F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9E3C7BED1E5A23E600CF229F /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		9E56B5BC1E59570200C476EB /* Community.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		9ED3ED381E58FBBD00A27725 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9ED3ED3A1E58FBFC00A27725 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				9ED3ED491E5922C400A27725 /* MessageBoardTableViewController.swift */,
+				9E3C7BEB1E5A1C4D00CF229F /* LoginViewController.swift */,
+				9E3C7BED1E5A23E600CF229F /* UserProfileViewController.swift */,
 			);
 			name = "DB View Controllers";
 			sourceTree = "<group>";
@@ -203,6 +211,15 @@
 			children = (
 				C9717F4B78B7368D20374B39 /* Pods-VhsHackcess.debug.xcconfig */,
 				47B8F3790C76D807AC5D8131 /* Pods-VhsHackcess.release.xcconfig */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC801B7278ABA27ACE668329 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				944CFB8A1A0D2A9BC928F241 /* Pods-VhsHackcess.debug.xcconfig */,
+				8200F774E43FE94C59A0BFBF /* Pods-VhsHackcess.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -317,12 +334,12 @@
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -332,7 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3C7BEC1E5A1C4D00CF229F /* LoginViewController.swift in Sources */,
 				4B4EA5951E57E24600582FBC /* ComplaintTypesTableViewController.swift in Sources */,
+				9E3C7BEE1E5A23E600CF229F /* UserProfileViewController.swift in Sources */,
 				4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */,
 				9ED3ED461E59061F00A27725 /* PostTableViewCell.swift in Sources */,
 				4B4EA5971E57E26200582FBC /* ComplaintTypesTableViewCell.swift in Sources */,
