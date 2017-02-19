@@ -10,12 +10,14 @@ import UIKit
 
 class User {
     var username: String
+    var profileImage: String
     
-    init(username: String) {
+    init(username: String, profileImage: String) {
         self.username = username
+        self.profileImage = profileImage
     }
     
     convenience init() {
-        self.init(username:  "")
+        self.init(username:  "", profileImage: "")
     }
 }
