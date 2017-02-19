@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import MapKit
 
-class IndividualComplaintViewController: UIViewController {
+class IndividualComplaintViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var infoTextView: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
+    
     var request: ServiceRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInfoLabel()
+        if let description = request?.descriptor {
+            self.title = description
+        }
+        setupMap()
     }
  
     func setupInfoLabel() {
@@ -63,6 +70,18 @@ class IndividualComplaintViewController: UIViewController {
         infoTextView.text = label
     }
 
- 
+    func setupMap() {
+        guard let request = request,
+            let coordinates = request.coordinates else { return }
+        let pinAnnotation = RequestMKPointAnnotation()
+        pinAnnotation.coordinate = coordinates
+        pinAnnotation.title = request.descriptor
+        pinAnnotation.subtitle = request.createdDate
+        mapView.addAnnotation(pinAnnotation)
+
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        let mkCoordinateRegion = MKCoordinateRegion(center: coordinates, span: span)
+        self.mapView.setRegion(mkCoordinateRegion, animated: true)
+    }
 
 }
