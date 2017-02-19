@@ -19,7 +19,7 @@ class MessageBoardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let community = Community.community.communityName {
+        if let community = Community.community.communityID {
             communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)
             self.title = "\(community) Forums"
@@ -31,13 +31,14 @@ class MessageBoardTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkChosenCommunity()
+        populatePosts()
     }
     
     // MARK: - Functions
     
     func checkChosenCommunity() {
-        if communityBoroughCode != Community.community.communityName {
-            communityBoroughCode = Community.community.communityName
+        if communityBoroughCode != Community.community.communityID {
+            communityBoroughCode = Community.community.communityID
             if let community = communityBoroughCode {
                 databaseRef = FIRDatabase.database().reference().child(community)
                 self.title = "\(community) Forums"
@@ -49,12 +50,14 @@ class MessageBoardTableViewController: UITableViewController {
     
     func populatePosts() {
         if let _ = communityBoroughCode {
-            databaseRef?.observeSingleEvent(of: .value , with: { (snapshot) in
+            posts.removeAll()
+            
+            databaseRef?.child("posts").observeSingleEvent(of: .value , with: { (snapshot) in
                 
                 for child in snapshot.children {
                     if let snap = child as? FIRDataSnapshot,
                         let valueDict = snap.value as? [String : Any] {
-                        let post = Post(uid: valueDict["uid"] as! String, author: valueDict["author"] as! String, title: valueDict["title"] as! String, body: valueDict["body"] as! String, commentCount: valueDict["commentCount"] as! Int)
+                        let post = Post(uid: valueDict["UID"] as! String, author: valueDict["Author"] as! String, title: valueDict["Title"] as! String, body: valueDict["Body"] as! String)//, commentCount: valueDict["commentCount"] as! Int)
                         self.posts.append(post)
                     }
                 }
@@ -80,7 +83,7 @@ class MessageBoardTableViewController: UITableViewController {
         let post = posts[indexPath.row]
         cell.topicHeadline.text = post.title
         cell.postCommentLabel.text = post.body
-        cell.infoLabel.text = "By \(post.author) - \(post.commentCount) replies"
+        cell.infoLabel.text = "By \(post.author)" // - \(post.commentCount) replies"
         
         return cell
     }
