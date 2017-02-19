@@ -21,6 +21,7 @@
 		4B4EA59B1E57E29C00582FBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59A1E57E29C00582FBC /* MapViewController.swift */; };
 		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
 		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
+		4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */; };
 		9E56B5BD1E59570200C476EB /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56B5BC1E59570200C476EB /* Community.swift */; };
 		9ED3ED391E58FBBD00A27725 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED381E58FBBD00A27725 /* User.swift */; };
 		9ED3ED3B1E58FBFC00A27725 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ED3A1E58FBFC00A27725 /* Post.swift */; };
@@ -344,6 +345,7 @@
 				9ED3ED391E58FBBD00A27725 /* User.swift in Sources */,
 				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
 				4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */,
+				4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */,
 				9E56B5BD1E59570200C476EB /* Community.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
