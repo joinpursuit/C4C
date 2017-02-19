@@ -13,4 +13,5 @@ class Community {
     
     var communityID: String? 
     var communityName: String?
+    var borough: String?
 }

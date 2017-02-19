@@ -12,7 +12,6 @@ import WebKit
 class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate, WKUIDelegate {
     //MARK: - Outlets
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var infoTextView: UITextView!
     @IBOutlet weak var searchButton: UIButton!
     // @IBOutlet weak var cbWebView: UIWebView!
     @IBOutlet weak var communityBoardImageView: UIImageView!
@@ -159,6 +158,8 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
                                 CATransaction.commit()
                                 
                             }
+                            
+                            Community.community.borough = borough
                             
                             switch borough {
                             case "QUEENS":

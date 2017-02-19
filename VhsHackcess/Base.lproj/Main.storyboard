@@ -701,6 +701,7 @@
                     <connections>
                         <segue destination="6Kq-JO-kBY" kind="relationship" relationship="viewControllers" id="yLV-ZB-dE9"/>
                         <segue destination="8z4-KJ-txs" kind="relationship" relationship="viewControllers" id="vo8-6U-hNW"/>
+                        <segue destination="5dy-q6-37w" kind="relationship" relationship="viewControllers" id="W5P-yp-qZm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdl-n5-hz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
