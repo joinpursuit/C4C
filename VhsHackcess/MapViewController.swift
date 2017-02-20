@@ -23,6 +23,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
     }
     
@@ -75,6 +76,14 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let request = requests[indexPath.row]
         cell.descriptorLabel.text = request.descriptor
         cell.timeAndDateLabel.text = request.createdDate
+        
+        //color gradient and font changes
+        cell.selectionStyle = .none
+        cell.backgroundColor = ColorManager.shared.colorArray[indexPath.row % ColorManager.shared.colorArray.count]
+        cell.descriptorLabel?.textColor = UIColor.white
+        cell.timeAndDateLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        
         return cell
     }
     

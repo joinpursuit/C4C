@@ -19,6 +19,10 @@ class MessageBoardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //black nav bar color
+        self.navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = ColorManager.shared.primary
+        
         if let community = Community.community.communityID {
             communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)

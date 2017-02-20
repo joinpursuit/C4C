@@ -18,10 +18,17 @@ class IndividualComplaintViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupInfoLabel()
-        if let description = request?.descriptor {
-            self.title = description
-        }
+        
+        //textView color scheme
+        self.infoTextView.textColor = UIColor.white
+        self.infoTextView.backgroundColor = ColorManager.shared.primaryDark
+        
+        //removed this after testing and seeing the Back button text making this look awkward
+//        if let description = request?.descriptor {
+//            self.title = description
+//        }
         setupMap()
     }
  
