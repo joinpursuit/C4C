@@ -53,9 +53,13 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         self.view.addSubview(self.logoView)
         self.logoView.center = self.view.center
         
-        //minimize keyboard when tapping view
-        setUpMinimizeKeyboardTapGesture()
+        //black nav bar color and tab color
+        self.navigationController?.navigationBar.barStyle = .black
+        self.tabBarController?.tabBar.barStyle = .black
+        self.searchButton.tintColor = ColorManager.shared.primary
+        self.tabBarController?.tabBar.tintColor = ColorManager.shared.primary
         
+        //for imageview/webview
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
@@ -72,15 +76,15 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         self.logoView.imageView.layer.add(animation, forKey: "transform.rotation.y")
     }
     
-    func setUpMinimizeKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.delegate = self
-        self.view.addGestureRecognizer(tap)
-    }
-    
-    func handleTap() {
-        self.addressTextField.resignFirstResponder()
-    }
+//    func setUpMinimizeKeyboardTapGesture() {
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+//        tap.delegate = self
+//        self.view.addGestureRecognizer(tap)
+//    }
+//    
+//    func handleTap() {
+//        self.addressTextField.resignFirstResponder()
+//    }
     
     func shrinkImageViewAnimation() {
         UIView.animate(withDuration: 1.5, animations: {
