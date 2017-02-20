@@ -264,52 +264,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register / Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfJ-1s-VHv">
-                                <rect key="frame" x="127" y="148" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VS7-Ih-8ss">
-                                <rect key="frame" x="47" y="219" width="281" height="30"/>
+                                <rect key="frame" x="47" y="328" width="281" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4md-9F-Y9T">
-                                <rect key="frame" x="47" y="269" width="281" height="30"/>
+                                <rect key="frame" x="47" y="366" width="281" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0In-A5-1dA">
-                                <rect key="frame" x="168" y="351" width="38" height="30"/>
+                                <rect key="frame" x="168" y="420" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="NBH-WE-Joa" eventType="touchUpInside" id="jiB-Cc-nmt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxM-rL-cWi">
-                                <rect key="frame" x="159" y="405" width="57" height="30"/>
+                                <rect key="frame" x="159" y="458" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="NBH-WE-Joa" eventType="touchUpInside" id="H3P-dk-Vqq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C4C.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ogr-JT-gag">
+                                <rect key="frame" x="87.5" y="96" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="d2a-CM-hIW"/>
+                                    <constraint firstAttribute="height" constant="200" id="rfg-nn-dcT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qfJ-1s-VHv" firstAttribute="centerX" secondItem="zfG-XY-EEn" secondAttribute="centerX" id="7JE-4q-hdW"/>
-                            <constraint firstItem="VS7-Ih-8ss" firstAttribute="top" secondItem="qfJ-1s-VHv" secondAttribute="bottom" constant="50" id="7JP-41-iUj"/>
                             <constraint firstItem="4md-9F-Y9T" firstAttribute="centerX" secondItem="VS7-Ih-8ss" secondAttribute="centerX" id="HQb-Ae-BCO"/>
                             <constraint firstItem="0In-A5-1dA" firstAttribute="centerX" secondItem="4md-9F-Y9T" secondAttribute="centerX" id="IbA-z9-kWM"/>
                             <constraint firstItem="4md-9F-Y9T" firstAttribute="width" secondItem="VS7-Ih-8ss" secondAttribute="width" id="Jf7-Na-mmH"/>
                             <constraint firstItem="VS7-Ih-8ss" firstAttribute="centerX" secondItem="zfG-XY-EEn" secondAttribute="centerX" id="Nwp-iJ-QMQ"/>
-                            <constraint firstItem="KxM-rL-cWi" firstAttribute="top" secondItem="0In-A5-1dA" secondAttribute="bottom" constant="24" id="auN-yd-3Qt"/>
-                            <constraint firstItem="4md-9F-Y9T" firstAttribute="top" secondItem="VS7-Ih-8ss" secondAttribute="bottom" constant="20" id="i5B-1x-dgR"/>
-                            <constraint firstItem="qfJ-1s-VHv" firstAttribute="top" secondItem="gkN-dV-WeX" secondAttribute="bottom" constant="84" id="nOv-Rr-dYQ"/>
-                            <constraint firstItem="0In-A5-1dA" firstAttribute="top" secondItem="4md-9F-Y9T" secondAttribute="bottom" constant="52" id="ofo-9T-KDw"/>
+                            <constraint firstItem="KxM-rL-cWi" firstAttribute="top" secondItem="0In-A5-1dA" secondAttribute="bottom" constant="8" id="bFz-FF-lPV"/>
+                            <constraint firstItem="4md-9F-Y9T" firstAttribute="top" secondItem="VS7-Ih-8ss" secondAttribute="bottom" constant="8" id="i5B-1x-dgR"/>
+                            <constraint firstItem="0In-A5-1dA" firstAttribute="top" secondItem="4md-9F-Y9T" secondAttribute="bottom" constant="24" id="ofo-9T-KDw"/>
+                            <constraint firstItem="Ogr-JT-gag" firstAttribute="centerX" secondItem="VS7-Ih-8ss" secondAttribute="centerX" id="qsv-1H-egF"/>
                             <constraint firstItem="VS7-Ih-8ss" firstAttribute="width" secondItem="zfG-XY-EEn" secondAttribute="width" multiplier="0.75" id="szE-B1-xiX"/>
+                            <constraint firstItem="Ogr-JT-gag" firstAttribute="top" secondItem="gkN-dV-WeX" secondAttribute="bottom" constant="32" id="t5Q-UR-tR0"/>
+                            <constraint firstItem="VS7-Ih-8ss" firstAttribute="top" secondItem="Ogr-JT-gag" secondAttribute="bottom" constant="32" id="x74-Hg-H00"/>
                             <constraint firstItem="KxM-rL-cWi" firstAttribute="centerX" secondItem="0In-A5-1dA" secondAttribute="centerX" id="yaY-lZ-CtM"/>
                         </constraints>
                     </view>
@@ -681,7 +682,7 @@
         <scene sceneID="hCi-uI-Py8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Kq-JO-kBY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="311 Complaints" selectedImage="A30152C5-6560-4D2D-A527-5A6FE9E02159" id="UPo-Zp-bqz"/>
+                    <tabBarItem key="tabBarItem" title="311 Complaints" selectedImage="E1AD1F02-3225-487F-80BC-A0AAB7A89965" id="UPo-Zp-bqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsd-Mb-SnS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -717,7 +718,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A30152C5-6560-4D2D-A527-5A6FE9E02159" width="24" height="24">
+        <image name="C4C.png" width="16" height="16"/>
+        <image name="E1AD1F02-3225-487F-80BC-A0AAB7A89965" width="24" height="24">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
