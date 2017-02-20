@@ -28,6 +28,11 @@ class ComplaintTypesTableViewController: UITableViewController {
         
         self.title = self.communityBoard
         
+        //color scheme
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.tintColor = ColorManager.shared.primary
+        
+        
         //populate complaintTypes dictionary
         APIRequestManager.manager.getData(endPoint: self.openDataEndpoint) { (data: Data?) in
             
@@ -76,7 +81,13 @@ class ComplaintTypesTableViewController: UITableViewController {
         //sorted results
         let complaint = self.tuples.sorted { $0.1 > $1.1 }[indexPath.row]
         
+        //color scheme
+        cell.selectionStyle = .none
+        cell.backgroundColor = ColorManager.shared.colorArray[indexPath.row % ColorManager.shared.colorArray.count]
+        cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.text = "\(complaint.0) (\(complaint.1))"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        
         return cell
     }
     

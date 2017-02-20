@@ -10,6 +10,7 @@
 		2710575DC00E3DFE49ED3296 /* Pods_VhsHackcess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D662670F73B128ED0722C40C /* Pods_VhsHackcess.framework */; };
 		4710959D1E58A2F20031D271 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710959C1E58A2F20031D271 /* APIRequestManager.swift */; };
 		472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */; };
+		4742CED71E5A5938008244E1 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742CED61E5A5938008244E1 /* ColorManager.swift */; };
 		47CA0EEC1E5A2C42007FE88D /* C4CLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */; };
 		4B1B88741E57FE950091CA93 /* Community Districts.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B88731E57FE950091CA93 /* Community Districts.geojson */; };
 		4B1EF7BB1E5A50A800EE1748 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EF7BA1E5A50A800EE1748 /* WebViewController.swift */; };
@@ -25,6 +26,7 @@
 		4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */; };
 		4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */; };
 		4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */; };
+		9E0F6CC71E5A53CB0059E23D /* ComposePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F6CC61E5A53CB0059E23D /* ComposePostViewController.swift */; };
 		9E3C7BEC1E5A1C4D00CF229F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C7BEB1E5A1C4D00CF229F /* LoginViewController.swift */; };
 		9E3C7BEE1E5A23E600CF229F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C7BED1E5A23E600CF229F /* UserProfileViewController.swift */; };
 		9E56B5BD1E59570200C476EB /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E56B5BC1E59570200C476EB /* Community.swift */; };
@@ -39,6 +41,7 @@
 /* Begin PBXFileReference section */
 		4710959C1E58A2F20031D271 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		4742CED61E5A5938008244E1 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		47CA0EEB1E5A2C42007FE88D /* C4CLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C4CLogoView.swift; sourceTree = "<group>"; };
 		4B1B88731E57FE950091CA93 /* Community Districts.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Community Districts.geojson"; sourceTree = "<group>"; };
 		4B1EF7BA1E5A50A800EE1748 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +59,7 @@
 		4B4EA59C1E57E2C100582FBC /* IndividualComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualComplaintViewController.swift; sourceTree = "<group>"; };
 		4B4EA5A11E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplaintDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMKPointAnnotation.swift; sourceTree = "<group>"; };
-		8200F774E43FE94C59A0BFBF /* Pods-VhsHackcess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.release.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.release.xcconfig"; sourceTree = "<group>"; };
-		944CFB8A1A0D2A9BC928F241 /* Pods-VhsHackcess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VhsHackcess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess.debug.xcconfig"; sourceTree = "<group>"; };
+		9E0F6CC61E5A53CB0059E23D /* ComposePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposePostViewController.swift; sourceTree = "<group>"; };
 		9E3C7BEB1E5A1C4D00CF229F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9E3C7BED1E5A23E600CF229F /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		9E56B5BC1E59570200C476EB /* Community.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				4710959C1E58A2F20031D271 /* APIRequestManager.swift */,
+				4742CED61E5A5938008244E1 /* ColorManager.swift */,
 				472C27CC1E58A9D2007CE152 /* ServiceRequest.swift */,
 				4BD0F1461E594F1A00108DF4 /* RequestMKPointAnnotation.swift */,
 			);
@@ -109,7 +112,7 @@
 				472C27CB1E58A97D007CE152 /* Model Objects */,
 				4B4EA5A01E57E2EE00582FBC /* Supporting Files */,
 				4B4EA57E1E57CE2300582FBC /* Products */,
-				C1CD339D5D7F4F06E3BEC1BE /* Pods */,
+				C1CD339D5D7F4F06E3BEC1BE /* Frameworks */,
 				44329F9B595339500E660005 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				9ED3ED491E5922C400A27725 /* MessageBoardTableViewController.swift */,
 				9E3C7BEB1E5A1C4D00CF229F /* LoginViewController.swift */,
 				9E3C7BED1E5A23E600CF229F /* UserProfileViewController.swift */,
+				9E0F6CC61E5A53CB0059E23D /* ComposePostViewController.swift */,
 			);
 			name = "DB View Controllers";
 			sourceTree = "<group>";
@@ -209,21 +213,12 @@
 			name = "DB Views";
 			sourceTree = "<group>";
 		};
-		C1CD339D5D7F4F06E3BEC1BE /* Pods */ = {
+		C1CD339D5D7F4F06E3BEC1BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C9717F4B78B7368D20374B39 /* Pods-VhsHackcess.debug.xcconfig */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CC801B7278ABA27ACE668329 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				944CFB8A1A0D2A9BC928F241 /* Pods-VhsHackcess.debug.xcconfig */,
-				8200F774E43FE94C59A0BFBF /* Pods-VhsHackcess.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B4EA58F1E57CE2300582FBC /* Build configuration list for PBXNativeTarget "VhsHackcess" */;
 			buildPhases = (
-				771DEE0CEDA304E02FD3AC0F /* [CP] Check Pods Manifest.lock */,
+				771DEE0CEDA304E02FD3AC0F /* [CP] Copy Pods Resources */,
 				4B4EA5791E57CE2300582FBC /* Sources */,
 				4B4EA57A1E57CE2300582FBC /* Frameworks */,
 				4B4EA57B1E57CE2300582FBC /* Resources */,
@@ -329,7 +324,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VhsHackcess/Pods-VhsHackcess-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		771DEE0CEDA304E02FD3AC0F /* [CP] Check Pods Manifest.lock */ = {
+		771DEE0CEDA304E02FD3AC0F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,9 +361,11 @@
 				4B4EA59D1E57E2C100582FBC /* IndividualComplaintViewController.swift in Sources */,
 				472C27CD1E58A9D2007CE152 /* ServiceRequest.swift in Sources */,
 				4B4EA5811E57CE2300582FBC /* AppDelegate.swift in Sources */,
+				4742CED71E5A5938008244E1 /* ColorManager.swift in Sources */,
 				4B4EA5931E57E21A00582FBC /* CommunityBoardViewController.swift in Sources */,
 				9ED3ED391E58FBBD00A27725 /* User.swift in Sources */,
 				4B4EA5A21E57E6EC00582FBC /* ComplaintDetailsTableViewCell.swift in Sources */,
+				9E0F6CC71E5A53CB0059E23D /* ComposePostViewController.swift in Sources */,
 				4B4EA5991E57E27800582FBC /* DateRangeViewController.swift in Sources */,
 				4BD0F1471E594F1A00108DF4 /* RequestMKPointAnnotation.swift in Sources */,
 				9E56B5BD1E59570200C476EB /* Community.swift in Sources */,
