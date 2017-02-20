@@ -20,14 +20,21 @@ class MessageBoardTableViewController: UITableViewController {
         super.viewDidLoad()
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 81e36a39317e8f6d3192c0b0f142aaef26a58cb9
         //black nav bar color
         self.navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.tintColor = ColorManager.shared.primary
         
+<<<<<<< HEAD
         if let community = Community.community.communityName {
 =======
         if let community = Community.community.communityID {
 >>>>>>> 7ad3c2a421c8821b944a59d740c01e92df76396e
+=======
+        if let community = Community.community.communityID {
+>>>>>>> 81e36a39317e8f6d3192c0b0f142aaef26a58cb9
             communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)
             self.title = "\(community) Forums"
