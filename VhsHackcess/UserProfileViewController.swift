@@ -31,6 +31,10 @@ class UserProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //color scheme
+        self.logoutButton.tintColor = ColorManager.shared.primary
+        
         checkLoggedIn()
         changeText()
     }

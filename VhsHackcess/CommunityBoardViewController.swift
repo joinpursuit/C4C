@@ -76,16 +76,6 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         self.logoView.imageView.layer.add(animation, forKey: "transform.rotation.y")
     }
     
-//    func setUpMinimizeKeyboardTapGesture() {
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-//        tap.delegate = self
-//        self.view.addGestureRecognizer(tap)
-//    }
-//    
-//    func handleTap() {
-//        self.addressTextField.resignFirstResponder()
-//    }
-    
     func shrinkImageViewAnimation() {
         UIView.animate(withDuration: 1.5, animations: {
             self.logoView.center = self.view.center

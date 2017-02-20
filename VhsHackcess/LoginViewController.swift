@@ -28,6 +28,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        
+        //color scheme
+        self.loginButton.tintColor = ColorManager.shared.primary
+        self.registerButton.tintColor = ColorManager.shared.primary
     }
     
     // MARK: - Functions and Methods
