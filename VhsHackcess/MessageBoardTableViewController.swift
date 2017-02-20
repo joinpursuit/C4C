@@ -27,18 +27,34 @@ class MessageBoardTableViewController: UITableViewController {
             communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)
             self.title = "\(community) Forums"
-            
-            populatePosts()
+        }
+        else {
+            showOKAlert(title: "Please select a district first!", message: nil, dismissCompletion: {
+                action in self.tabBarController?.selectedIndex = 0;
+            })
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        posts.removeAll()
+        if Community.community.communityID == nil {
+            showOKAlert(title: "Please select a district first!", message: nil, dismissCompletion: {
+                action in self.tabBarController?.selectedIndex = 0;
+            })
+        }
         checkChosenCommunity()
         populatePosts()
     }
     
     // MARK: - Functions
+    
+    func showOKAlert(title: String, message: String?, dismissCompletion: ((UIAlertAction) -> Void)? = nil, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: dismissCompletion)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: completion)
+    }
     
     func checkChosenCommunity() {
         if communityBoroughCode != Community.community.communityID {
@@ -47,8 +63,6 @@ class MessageBoardTableViewController: UITableViewController {
                 databaseRef = FIRDatabase.database().reference().child(community)
                 self.title = "\(community) Forums"
             }
-            
-            populatePosts()
         }
     }
     
@@ -65,7 +79,6 @@ class MessageBoardTableViewController: UITableViewController {
                         self.posts.append(post)
                     }
                 }
-                
                 self.tableView.reloadData()
             })
         }
@@ -101,5 +114,5 @@ class MessageBoardTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-        
+    
 }

@@ -27,6 +27,7 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
         super.viewDidLoad()
         topicField.delegate = self
         commentField.delegate = self
+        postButton.tintColor = ColorManager.shared.primary
         
         if let communityID = Community.community.communityID {
             databaseRef = FIRDatabase.database().reference().child(communityID).child("posts")
