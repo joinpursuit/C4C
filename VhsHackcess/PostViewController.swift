@@ -34,6 +34,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         super.viewDidLoad()
         commentTableView.delegate = self
         commentTableView.dataSource = self
+        self.replyButton.isEnabled = false
         
         //color scheme
         self.replyButton.tintColor = ColorManager.shared.primary
@@ -109,7 +110,9 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        replyButtonTapped(replyButton)
+        if replyButton.isEnabled {
+            replyButtonTapped(replyButton)
+        }
         return true
     }
     
