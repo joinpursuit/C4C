@@ -37,6 +37,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         self.replyButton.isEnabled = false
         
         //color scheme
+        self.titleLabel.textColor = ColorManager.shared.primary
         self.replyButton.tintColor = ColorManager.shared.primary
         
         replyField.delegate = self
@@ -52,7 +53,20 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     func populatePost() {
         titleLabel.text = post.title
-        idLabel.text = "Submitted by \(post.author)"
+        
+        let attributedString = NSMutableAttributedString(string: "Submitted by: ", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight)])
+        let descriptionAttribute = NSMutableAttributedString(string: post.author, attributes: [NSForegroundColorAttributeName : ColorManager.shared.primary, NSFontAttributeName : UIFont.systemFont(ofSize: 14, weight: UIFontWeightBold)])
+        attributedString.append(descriptionAttribute)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        
+        let textLength = attributedString.string.characters.count
+        let range = NSRange(location: 0, length: textLength)
+        
+        attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: range)
+        
+        idLabel.attributedText = attributedString
         commentView.text = post.body
     }
     
@@ -135,7 +149,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseComment", for: indexPath) as! CommentTableViewCell
         cell.commentLabel?.text = comments[indexPath.row].text
-        cell.infoLabel?.text = "Submitted by \(comments[indexPath.row].author)"
+        cell.user = comments[indexPath.row].author
         
         return cell
     }
