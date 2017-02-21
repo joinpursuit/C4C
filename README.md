@@ -17,3 +17,10 @@ C4C serves as an avenue for *anyone* in the community to engage in meaningful di
 
 ## Demo
 ![demo](https://github.com/C4Q/AC3.2-groupSeven-Noise/blob/feature-READMEsetup/demo.gif?raw=true)
+
+## Authors
+**Harichandan Singh** - Project Manager : [Github](https://github.com/harichandansingh)
+
+**Sabrina Ip** - Tech Lead : [Github](https://github.com/sabrinaip)
+
+**Victor Zhong** : [Github](https://github.com/vic-zhong)
