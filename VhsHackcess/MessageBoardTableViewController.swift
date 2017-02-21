@@ -26,28 +26,29 @@ class MessageBoardTableViewController: UITableViewController {
         if let community = Community.community.communityID {
             communityBoroughCode = community
             databaseRef = FIRDatabase.database().reference().child(community)
-            self.title = "\(community) Forums"
+            self.title = "\(Community.community.communityName!) Forums"
         }
         else {
-            showOKAlert(title: "Please select a district first!", message: nil, dismissCompletion: {
-                action in self.tabBarController?.selectedIndex = 0;
-            })
+            goHome()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        posts.removeAll()
         if Community.community.communityID == nil {
-            showOKAlert(title: "Please select a district first!", message: nil, dismissCompletion: {
-                action in self.tabBarController?.selectedIndex = 0;
-            })
+            goHome()
         }
         checkChosenCommunity()
         populatePosts()
     }
     
     // MARK: - Functions
+    
+    func goHome() {
+        showOKAlert(title: "Please select a district first!", message: nil, dismissCompletion: {
+            action in self.tabBarController?.selectedIndex = 0;
+        })
+    }
     
     func showOKAlert(title: String, message: String?, dismissCompletion: ((UIAlertAction) -> Void)? = nil, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -61,14 +62,16 @@ class MessageBoardTableViewController: UITableViewController {
             communityBoroughCode = Community.community.communityID
             if let community = communityBoroughCode {
                 databaseRef = FIRDatabase.database().reference().child(community)
-                self.title = "\(community) Forums"
+                self.title = "\(Community.community.communityName!) Forums"
             }
         }
     }
     
     func populatePosts() {
         if let _ = communityBoroughCode {
-            posts.removeAll()
+            posts = []
+            
+            self.tableView.allowsSelection = false
             
             databaseRef?.child("posts").observeSingleEvent(of: .value , with: { (snapshot) in
                 
@@ -86,6 +89,7 @@ class MessageBoardTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
+        self.tableView.allowsSelection = true
     }
     
     // MARK: - Table view data source
