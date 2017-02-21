@@ -30,6 +30,9 @@ class MessageBoardTableViewController: UITableViewController {
         else {
             goHome()
         }
+        
+        self.tableView.estimatedRowHeight = 150.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,9 +43,9 @@ class MessageBoardTableViewController: UITableViewController {
             goHome()
         }
         else {
-        checkChosenCommunity()
-        checkCommunityPosting(communityBoroughCode!)
-        populatePosts()
+            checkChosenCommunity()
+            checkCommunityPosting(communityBoroughCode!)
+            populatePosts()
         }
     }
     
