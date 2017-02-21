@@ -16,3 +16,4 @@ The community boards of the New York City government are the appointed advisory 
 C4C serves as an avenue for *anyone* in the community to engage in meaningful discussion about their local community district. Community boards typically meet once per month and set aside time to hear the public at meetings. Additionally, meetings are to be available for broadcasting and cable-casting. The issue, however, is that a majority of constituents are vastly uninformed about what's discussed and where to locate this public information. A simple Google search does not provide a one-stop shop for answers. C4C can ideally be utilized as a tool to optimize the distribution of information and indirectly reach a larger network of people.
 
 ## Demo
+![demo](https://github.com/C4Q/AC3.2-groupSeven-Noise/blob/feature-READMEsetup/Demo.gif?raw=true)
