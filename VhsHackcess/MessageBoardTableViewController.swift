@@ -124,9 +124,9 @@ class MessageBoardTableViewController: UITableViewController {
                     }
                 }
                 self.tableView.reloadData()
+                self.tableView.allowsSelection = true
             })
         }
-        self.tableView.allowsSelection = true
     }
     
     // MARK: - Table view data source
@@ -145,7 +145,7 @@ class MessageBoardTableViewController: UITableViewController {
         let post = posts[indexPath.row]
         cell.topicHeadline.text = post.title
         cell.postCommentLabel.text = post.body
-        cell.infoLabel.text = "By \(post.author)" // - \(post.commentCount) replies"
+        cell.user = post.author
         
         return cell
     }
