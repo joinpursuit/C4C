@@ -79,7 +79,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //color gradient and font changes
         cell.selectionStyle = .none
-        cell.backgroundColor = ColorManager.shared.colorArray[indexPath.row % ColorManager.shared.colorArray.count]
+//        cell.backgroundColor = ColorManager.shared.colorArray[indexPath.row % ColorManager.shared.colorArray.count]
+        cell.backgroundColor = ColorManager.shared.primary
         cell.descriptorLabel?.textColor = UIColor.white
         cell.timeAndDateLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
