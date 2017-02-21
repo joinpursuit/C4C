@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,51 +133,41 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-3G-HuB">
-                                            <rect key="frame" x="8" y="8" width="93" height="93"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="ClP-3G-HuB" secondAttribute="height" multiplier="1:1" id="Pek-eV-8HE"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Headline Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E39-ZU-uc8">
-                                            <rect key="frame" x="109" y="8" width="250" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Headline Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E39-ZU-uc8">
+                                            <rect key="frame" x="16" y="16" width="343" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Comment Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtv-bJ-dSh">
-                                            <rect key="frame" x="109" y="33" width="250" height="55"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Comment Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtv-bJ-dSh">
+                                            <rect key="frame" x="16" y="45" width="343" height="23.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghB-MN-W5B">
-                                            <rect key="frame" x="109" y="92" width="250" height="17"/>
+                                            <rect key="frame" x="16" y="76.5" width="343" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ClP-3G-HuB" firstAttribute="leading" secondItem="Bvy-ac-a2K" secondAttribute="leading" constant="8" id="951-RV-fLM"/>
-                                        <constraint firstItem="ClP-3G-HuB" firstAttribute="top" secondItem="Bvy-ac-a2K" secondAttribute="top" constant="8" id="Kim-tm-rH6"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Xtv-bJ-dSh" secondAttribute="trailing" constant="8" id="Ulr-fJ-QLt"/>
-                                        <constraint firstItem="ghB-MN-W5B" firstAttribute="top" secondItem="Xtv-bJ-dSh" secondAttribute="bottom" constant="4" id="W6q-39-WyQ"/>
-                                        <constraint firstItem="ghB-MN-W5B" firstAttribute="leading" secondItem="ClP-3G-HuB" secondAttribute="trailing" constant="8" id="W7D-Ok-Rs0"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="E39-ZU-uc8" secondAttribute="trailing" constant="8" id="Wlm-i6-POO"/>
-                                        <constraint firstItem="Xtv-bJ-dSh" firstAttribute="top" secondItem="E39-ZU-uc8" secondAttribute="bottom" constant="4" id="apy-n0-MLb"/>
-                                        <constraint firstAttribute="bottom" secondItem="ClP-3G-HuB" secondAttribute="bottom" constant="8" id="c4b-A1-rBu"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ghB-MN-W5B" secondAttribute="trailing" constant="8" id="dS8-Gg-Ry2"/>
-                                        <constraint firstItem="Xtv-bJ-dSh" firstAttribute="leading" secondItem="ClP-3G-HuB" secondAttribute="trailing" constant="8" id="jpK-kT-z6u"/>
-                                        <constraint firstItem="E39-ZU-uc8" firstAttribute="leading" secondItem="ClP-3G-HuB" secondAttribute="trailing" constant="8" id="r7r-Ta-I7l"/>
-                                        <constraint firstItem="E39-ZU-uc8" firstAttribute="top" secondItem="ClP-3G-HuB" secondAttribute="top" id="sas-Su-oQu"/>
-                                        <constraint firstItem="ghB-MN-W5B" firstAttribute="bottom" secondItem="Bvy-ac-a2K" secondAttribute="bottomMargin" constant="8" id="zon-QR-eMt"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="E39-ZU-uc8" secondAttribute="trailing" constant="8" id="55y-fv-8WA"/>
+                                        <constraint firstItem="ghB-MN-W5B" firstAttribute="top" secondItem="Xtv-bJ-dSh" secondAttribute="bottom" constant="8" id="91R-bX-ZgU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ghB-MN-W5B" secondAttribute="bottom" constant="8" id="H4G-Ep-raO"/>
+                                        <constraint firstItem="Xtv-bJ-dSh" firstAttribute="top" secondItem="E39-ZU-uc8" secondAttribute="bottom" constant="8" id="SVS-8t-gEp"/>
+                                        <constraint firstItem="Xtv-bJ-dSh" firstAttribute="leading" secondItem="Bvy-ac-a2K" secondAttribute="leadingMargin" constant="8" id="ZtJ-rW-DLo"/>
+                                        <constraint firstItem="ghB-MN-W5B" firstAttribute="leading" secondItem="Bvy-ac-a2K" secondAttribute="leadingMargin" constant="8" id="eo7-YB-izy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ghB-MN-W5B" secondAttribute="trailing" constant="8" id="fQh-MD-7kw"/>
+                                        <constraint firstItem="E39-ZU-uc8" firstAttribute="top" secondItem="Bvy-ac-a2K" secondAttribute="topMargin" constant="8" id="in8-vC-6fh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xtv-bJ-dSh" secondAttribute="trailing" constant="8" id="jbG-go-xeo"/>
+                                        <constraint firstItem="E39-ZU-uc8" firstAttribute="leading" secondItem="Bvy-ac-a2K" secondAttribute="leadingMargin" constant="8" id="xOu-VB-YkF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="infoLabel" destination="ghB-MN-W5B" id="atr-9r-AlG"/>
                                     <outlet property="postCommentLabel" destination="Xtv-bJ-dSh" id="WVv-v7-J7p"/>
-                                    <outlet property="profileImage" destination="ClP-3G-HuB" id="QNn-Ge-6Ch"/>
                                     <outlet property="topicHeadline" destination="E39-ZU-uc8" id="GNk-eY-NMp"/>
                                     <segue destination="Hh0-Ve-vTn" kind="show" identifier="readSegue" id="GOi-uX-P4X"/>
                                 </connections>
@@ -540,7 +529,7 @@
             <objects>
                 <navigationController id="8z4-KJ-txs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Forum" id="KDe-e8-oz1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wj1-zS-DTS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Wj1-zS-DTS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -786,9 +775,9 @@
         <scene sceneID="hCi-uI-Py8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Kq-JO-kBY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="311 Complaints" selectedImage="79FD0598-347F-49D2-B570-9EBA8DC3BDD7" id="UPo-Zp-bqz"/>
+                    <tabBarItem key="tabBarItem" title="311 Complaints" selectedImage="CED8A635-CBB3-4116-8498-E817F877324E" id="UPo-Zp-bqz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qsd-Mb-SnS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsd-Mb-SnS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -822,7 +811,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="79FD0598-347F-49D2-B570-9EBA8DC3BDD7" width="24" height="24">
+        <image name="C4C.png" width="16" height="16"/>
+        <image name="CED8A635-CBB3-4116-8498-E817F877324E" width="24" height="24">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -912,7 +902,6 @@ EvIS+hMHEwwTDhMQExUTHRMgEyUTLRMwE0ITRRNKAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAA
 E0w
 </mutableData>
         </image>
-        <image name="C4C.png" width="16" height="16"/>
         <image name="filter_filled" width="24" height="24"/>
     </resources>
 </document>

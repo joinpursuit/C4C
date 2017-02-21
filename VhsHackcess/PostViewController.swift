@@ -48,7 +48,6 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         self.commentTableView.estimatedRowHeight = 150.0
         self.commentTableView.rowHeight = UITableViewAutomaticDimension
-        
     }
     
     func populatePost() {
