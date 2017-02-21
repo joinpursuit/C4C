@@ -17,6 +17,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var logoHeightConstraint: NSLayoutConstraint!
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         loginUser()
     }
@@ -36,6 +39,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.loginButton,
             self.registerButton
             ].map { $0.tintColor = ColorManager.shared.primary }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
     
     // MARK: - Functions and Methods
@@ -104,6 +113,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            logoHeightConstraint.isActive = false
+            logoHeightConstraint = logoImageView.heightAnchor.constraint(equalToConstant: 100)
+            logoHeightConstraint.isActive = true
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        logoHeightConstraint.isActive = false
+        logoHeightConstraint = logoImageView.heightAnchor.constraint(equalToConstant: 200)
+        logoHeightConstraint.isActive = true
+    }
+
     /*
      // MARK: - Navigation
      

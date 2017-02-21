@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -275,12 +276,18 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NBH-WE-Joa" id="xYg-pE-zy0"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4md-9F-Y9T">
                                 <rect key="frame" x="47" y="366" width="281" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NBH-WE-Joa" id="XGn-HG-bGp"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0In-A5-1dA">
                                 <rect key="frame" x="168" y="420" width="38" height="30"/>
@@ -299,7 +306,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C4C.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ogr-JT-gag">
                                 <rect key="frame" x="88" y="96" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="d2a-CM-hIW"/>
+                                    <constraint firstAttribute="width" secondItem="Ogr-JT-gag" secondAttribute="height" multiplier="1:1" id="hBl-NF-HUv"/>
                                     <constraint firstAttribute="height" constant="200" id="rfg-nn-dcT"/>
                                 </constraints>
                             </imageView>
@@ -323,6 +330,8 @@
                     <connections>
                         <outlet property="emailField" destination="VS7-Ih-8ss" id="173-EO-Xix"/>
                         <outlet property="loginButton" destination="0In-A5-1dA" id="zZO-wQ-Gmi"/>
+                        <outlet property="logoHeightConstraint" destination="rfg-nn-dcT" id="d4b-bM-SdI"/>
+                        <outlet property="logoImageView" destination="Ogr-JT-gag" id="Ct3-Ay-JtY"/>
                         <outlet property="passwordField" destination="4md-9F-Y9T" id="jKy-iG-Nt3"/>
                         <outlet property="registerButton" destination="KxM-rL-cWi" id="XTd-xC-9xo"/>
                     </connections>
