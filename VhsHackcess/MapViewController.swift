@@ -34,6 +34,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     // MARK: - Setup
     
     func setup() {
+        var reqs = [ServiceRequest]()
         if let complaintType = complaintType {
             self.title = complaintType
         }
@@ -44,7 +45,8 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         APIRequestManager.manager.getData(endPoint: endpoint) { (data: Data?) in
             if let unwrappedData = data {
-                self.requests = ServiceRequest.getServiceRequests(data: unwrappedData)!
+                reqs = ServiceRequest.getServiceRequests(data: unwrappedData)!
+                self.requests = reqs.sorted{ $0.createdDate > $1.createdDate }
                 DispatchQueue.main.async {
                     self.setMapPinAndRegion()
                     self.tableView.reloadData()
@@ -89,7 +91,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        positionMap(to: indexPath, radius: 4000.0)
+        positionMap(to: indexPath, radius: 1000.0)
     }
     
     // MARK: - Mapview
@@ -122,8 +124,15 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             let pinAnnotation = RequestMKPointAnnotation()
             pinAnnotation.coordinate = coordinates
-            pinAnnotation.title = request.descriptor
-            pinAnnotation.subtitle = request.createdDate
+            
+            if let address = request.incidentAddress {
+                pinAnnotation.title = address
+            } else {
+                pinAnnotation.title = request.createdDate
+            }
+            
+            pinAnnotation.subtitle = request.descriptor
+
             pinAnnotation.index = index
             mapView.addAnnotation(pinAnnotation)
             
