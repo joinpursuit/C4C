@@ -9,12 +9,13 @@
 import UIKit
 import WebKit
 
-class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate, WKUIDelegate {
+class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate, WKUIDelegate, UITextViewDelegate {
     //MARK: - Outlets
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     // @IBOutlet weak var cbWebView: UIWebView!
     @IBOutlet weak var communityBoardImageView: UIImageView!
+    @IBOutlet weak var linkTextView: UITextView!
     
     //MARK: - Properties
     var communityBoardCode: String = "" {
@@ -58,7 +59,8 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         self.tabBarController?.tabBar.barStyle = .black
         self.searchButton.tintColor = ColorManager.shared.primary
         self.tabBarController?.tabBar.tintColor = ColorManager.shared.primary
-        
+        linkTextView.backgroundColor = ColorManager.shared.primary
+        linkTextView.textColor = ColorManager.shared.primaryLight
         //for imageview/webview
         self.automaticallyAdjustsScrollViewInsets = false
     }
@@ -149,9 +151,9 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
                                 
                                 CATransaction.commit()
                                 
+                                Community.community.borough = borough
+                                self.setLink(borough: borough)
                             }
-                            
-                            Community.community.borough = borough
                             
                             switch borough {
                             case "QUEENS":
@@ -184,6 +186,60 @@ class CommunityBoardViewController: UIViewController, UITextFieldDelegate, UIGes
         }
         self.addressTextField.resignFirstResponder()
     }
+    
+    func setLink(borough: String) {
+        var hyperlink = ""
+        switch borough {
+        case "QUEENS":
+            hyperlink = "http://www.nyc.gov/html/cau/html/cb/queens.shtml"
+        case "BROOKLYN":
+            hyperlink = "http://www.nyc.gov/html/cau/html/cb/brooklyn.shtml"
+        case "MANHATTAN":
+            hyperlink = "http://www.nyc.gov/html/cau/html/cb/manhattan.shtml"
+        case "STATEN ISLAND":
+            hyperlink = "http://www.nyc.gov/html/cau/html/cb/si.shtml"
+        case "BRONX":
+            hyperlink = "http://www.nyc.gov/html/cau/html/cb/bronx.shtml"
+        default: break
+        }
+        
+        let textViewText = "Contact your community board here"
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+
+        let textAttributes = [
+            NSParagraphStyleAttributeName: style,
+            NSForegroundColorAttributeName: ColorManager.shared.primaryLight,
+            NSFontAttributeName: UIFont.systemFont(ofSize: 14.0)
+        ] as [String : Any]
+        
+        let linkAttributes = [
+            NSLinkAttributeName: NSURL(string: hyperlink)!,
+            NSForegroundColorAttributeName: ColorManager.shared.primaryDark,
+        ] as [String : Any]
+        
+        
+        let attributedString = NSMutableAttributedString(string: textViewText)
+        let length = attributedString.string.characters.count
+        let range = NSRange(location: 0, length: length)
+        attributedString.addAttributes(textAttributes, range: range)
+        attributedString.addAttribute(NSLinkAttributeName, value: NSURL(string: hyperlink)!, range: NSMakeRange(29, 4))
+//        attributedString.addAttributes(linkAttributes,range: NSMakeRange(29, 4))
+        
+        self.linkTextView.attributedText = attributedString
+        self.linkTextView.isSelectable = true
+
+    }
+    
+    func fadeTextView() {
+        self.linkTextView.alpha = 0
+    }
+    
+    func showTextView() {
+        self.linkTextView.alpha = 1
+    }
+    
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

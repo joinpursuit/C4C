@@ -13,35 +13,44 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
 
     var endpointString: String = "http://www.nyc.gov/html/cau/html/cb/cb.shtml"
-    var borough: String?
-    
-//    var communityBoardCode: String = "" {
-//        didSet {
-//            let urlString = "https://www1.nyc.gov/assets/planning/images/content/pages/community/community-portal/profile/overview/\(self.communityBoardCode).gif"
-//            let myURL = URL(string: urlString)
-//            guard let url = myURL else { return }
-//            print(url)
-//            let myRequest = URLRequest(url: url)
-//            
-//            APIRequestManager.manager.getData(endPoint: urlString) { (data) in
-//                if let validData = data {
-//                    DispatchQueue.main.async {
-//                        self.communityBoardImageView.image = UIImage(data: validData)
-//                        self.communityBoardImageView.isUserInteractionEnabled = true
-//                    }
-//                }
-//            }
-//            //self.cbWebView.loadRequest(myRequest)
-//            Community.community.communityID = self.communityBoardCode
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let boro = Community.community.borough {
+            switch boro {
+            case "QUEENS":
+                self.endpointString = "http://www.nyc.gov/html/cau/html/cb/queens.shtml"
+            case "BROOKLYN":
+                self.endpointString = "http://www.nyc.gov/html/cau/html/cb/brooklyn.shtml"
+            case "MANHATTAN":
+                self.endpointString = "http://www.nyc.gov/html/cau/html/cb/manhattan.shtml"
+            case "STATEN ISLAND":
+                self.endpointString = "http://www.nyc.gov/html/cau/html/cb/si.shtml"
+            case "BRONX":
+                self.endpointString = "http://www.nyc.gov/html/cau/html/cb/bronx.shtml"
+            default: break
+            }
+        }
+        
         let myURL = URL(string: endpointString)
         guard let url = myURL else { return }
-        print(url)
         let myRequest = URLRequest(url: url)
         self.webView.loadRequest(myRequest)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    @IBAction func reloadButtonPressed(_ sender: UIBarButtonItem) {
+        webView.reload()
+    }
+    
+    @IBAction func forwardButtonPressed(_ sender: UIBarButtonItem) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
     }
 }

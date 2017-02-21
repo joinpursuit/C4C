@@ -25,16 +25,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-bD-qya">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="524"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="x3S-ef-Djm" appends="YES" id="3zx-Ar-gIG"/>
                                 </connections>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Please enter your address above" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obf-RZ-5Jk">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="K20-sp-329"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HLA-ed-nib"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ljp-bD-qya" secondAttribute="bottom" id="OME-4u-5ew"/>
+                            <constraint firstItem="obf-RZ-5Jk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NB5-py-8dt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="obf-RZ-5Jk" secondAttribute="bottom" id="RgW-PC-xyZ"/>
+                            <constraint firstAttribute="trailing" secondItem="obf-RZ-5Jk" secondAttribute="trailing" id="WHM-AY-aMv"/>
+                            <constraint firstItem="obf-RZ-5Jk" firstAttribute="top" secondItem="Ljp-bD-qya" secondAttribute="bottom" id="YUd-JJ-DHu"/>
                             <constraint firstItem="Ljp-bD-qya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="afu-rx-jIK"/>
                             <constraint firstItem="Ljp-bD-qya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xE5-9d-sw6"/>
                             <constraint firstAttribute="trailing" secondItem="Ljp-bD-qya" secondAttribute="trailing" id="zb1-d9-IWh"/>
@@ -66,6 +82,7 @@
                     <connections>
                         <outlet property="addressTextField" destination="Cba-po-eau" id="AT7-dc-xGb"/>
                         <outlet property="communityBoardImageView" destination="Ljp-bD-qya" id="Abc-3P-xBV"/>
+                        <outlet property="linkTextView" destination="obf-RZ-5Jk" id="Mf0-gX-uq5"/>
                         <outlet property="searchButton" destination="v7R-fz-OJq" id="2qz-HM-ywM"/>
                     </connections>
                 </viewController>
@@ -775,6 +792,7 @@
         <scene sceneID="hCi-uI-Py8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Kq-JO-kBY" sceneMemberID="viewController">
+
                     <tabBarItem key="tabBarItem" title="311 Requests" image="nyc311" selectedImage="nyc311" id="UPo-Zp-bqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsd-Mb-SnS">
@@ -813,6 +831,7 @@
     <resources>
         <image name="C4C.png" width="16" height="16"/>
         <image name="chatbubble" width="24" height="24"/>
+
         <image name="filter_filled" width="24" height="24"/>
         <image name="nyc311" width="24" height="24"/>
     </resources>
