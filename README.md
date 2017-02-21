@@ -9,6 +9,5 @@ C4C aims to promote access, for members of a given community district, through e
 
 
 ## NYC Community Boards
-The community boards of the New York City government are the appointed advisory groups of the community districts of the five boroughs. There are currently 59 community districts, including twelve in Manhattan, twelve in the Bronx, eighteen in Brooklyn, fourteen in Queens, and three in Staten Island. According to the New York City Charter, the primary role of community board are to: 
-
-> "Cooperate with, consult, assist and advise elected governmental officials about any matter that “relates to the welfare of the Community District and its residents.”
+The community boards of the New York City government are the appointed advisory groups of the community districts of the five boroughs. There are currently 59 community districts, including twelve in Manhattan, twelve in the Bronx, eighteen in Brooklyn, fourteen in Queens, and three in Staten Island. According to the New York City Charter, the primary role of community board are to cooperate with, consult, assist and advise elected governmental officials about any matter that: 
+> “relates to the welfare of the Community District and its residents.”
