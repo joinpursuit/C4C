@@ -35,12 +35,19 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
+        //color scheme
+        self.replyButton.tintColor = ColorManager.shared.primary
+        
         replyField.delegate = self
         databaseRef = FIRDatabase.database().reference().child(commmunityID).child("posts").child(postString)
         commentRef = FIRDatabase.database().reference().child(commmunityID).child("post_comments").child(postString)
         populatePost()
         populateComments()
         checkLoggedIn()
+        
+        self.commentTableView.estimatedRowHeight = 150.0
+        self.commentTableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     func populatePost() {
@@ -87,15 +94,23 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             replyRef.setValue(replyRefDict) { (error, reference) in
                 if error != nil {
                     self.showOKAlert(title: "Error!", message: error?.localizedDescription)
-                    self.replyButton.isEnabled = true
                 }
                 else {
                     self.showOKAlert(title: "Message Posted!", message: nil, dismissCompletion: {
                         action in self.populateComments()
+                    }, completion: {
+                        self.replyField.text = ""
                     })
                 }
             }
+            self.replyButton.isEnabled = true
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        replyButtonTapped(replyButton)
+        return true
     }
     
     func showOKAlert(title: String, message: String?, dismissCompletion: ((UIAlertAction) -> Void)? = nil, completion: (() -> Void)? = nil) {
@@ -113,13 +128,12 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseComment", for: indexPath)
-        cell.textLabel?.text = comments[indexPath.row].text
-        cell.detailTextLabel?.text = "Submitted by \(comments[indexPath.row].author)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseComment", for: indexPath) as! CommentTableViewCell
+        cell.commentLabel?.text = comments[indexPath.row].text
+        cell.infoLabel?.text = "Submitted by \(comments[indexPath.row].author)"
         
         return cell
     }

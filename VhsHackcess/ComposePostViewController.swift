@@ -27,6 +27,8 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
         super.viewDidLoad()
         topicField.delegate = self
         commentField.delegate = self
+        
+        //color scheme
         postButton.tintColor = ColorManager.shared.primary
         
         if let communityID = Community.community.communityID {
