@@ -538,6 +538,7 @@
                         <outlet property="commentField" destination="Rio-8E-1X2" id="V6y-uC-gcy"/>
                         <outlet property="postButton" destination="mgT-Hb-2AD" id="Aik-qF-N9X"/>
                         <outlet property="statusLabel" destination="tmL-G5-vq6" id="6o4-F4-DAl"/>
+                        <outlet property="statusLabelBottom" destination="enc-RJ-Vij" id="3si-0C-xg3"/>
                         <outlet property="topicField" destination="gaB-4A-8LZ" id="4nz-4J-jbx"/>
                     </connections>
                 </viewController>
