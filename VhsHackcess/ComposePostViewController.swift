@@ -27,6 +27,8 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
         super.viewDidLoad()
         topicField.delegate = self
         commentField.delegate = self
+        
+        //color scheme
         postButton.tintColor = ColorManager.shared.primary
         
         if let communityID = Community.community.communityID {
@@ -64,7 +66,8 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
                 "Body" : comment,
                 "Title" : topic,
                 "UID" : currentUser.uid,
-//                "commentCount" : 0
+                "PostID" : postRef.key
+                //                "commentCount" : 0
             ]
             postRef.setValue(postRefDict) { (error, reference) in
                 if error != nil {
@@ -87,7 +90,6 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
         }
         return true
     }
-    
     
     func showOKAlert(title: String, message: String?, dismissCompletion: ((UIAlertAction) -> Void)? = nil, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

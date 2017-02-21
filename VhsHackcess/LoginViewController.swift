@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -28,6 +28,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        emailField.delegate = self
+        passwordField.delegate = self
+        
+        //color scheme
+        _ = [
+            self.loginButton,
+            self.registerButton
+            ].map { $0.tintColor = ColorManager.shared.primary }
     }
     
     // MARK: - Functions and Methods
@@ -80,6 +88,21 @@ class LoginViewController: UIViewController {
         alert.addAction(ok)
         self.present(alert, animated: true, completion: completion)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        
+        if textField == emailField {
+            passwordField.becomeFirstResponder()
+        }
+        
+        if textField == passwordField {
+            loginButtonTapped(loginButton)
+        }
+        
+        return true
+    }
+    
     
     /*
      // MARK: - Navigation
