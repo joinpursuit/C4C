@@ -17,6 +17,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     @IBOutlet weak var commentTableView: UITableView!
     @IBOutlet weak var replyField: UITextField!
     @IBOutlet weak var replyButton: UIButton!
+    @IBOutlet weak var replyFieldBottomConstraint: NSLayoutConstraint!
     
     @IBAction func replyButtonTapped(_ sender: UIButton) {
         postComment()
@@ -49,6 +50,12 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         
         self.commentTableView.estimatedRowHeight = 150.0
         self.commentTableView.rowHeight = UITableViewAutomaticDimension
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
     
     func populatePost() {
@@ -120,14 +127,7 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             self.replyButton.isEnabled = true
         }
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        if replyButton.isEnabled {
-            replyButtonTapped(replyButton)
-        }
-        return true
-    }
+
     
     func showOKAlert(title: String, message: String?, dismissCompletion: ((UIAlertAction) -> Void)? = nil, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -154,14 +154,36 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+     // MARK: - Textfield
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        if replyButton.isEnabled {
+            replyButtonTapped(replyButton)
+        }
+        return true
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+ 
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            replyFieldBottomConstraint.isActive = false
+            replyFieldBottomConstraint = replyField.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -keyboardHeight - 8.0)
+            replyFieldBottomConstraint.isActive = true
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        replyFieldBottomConstraint.isActive = false
+        replyFieldBottomConstraint = replyField.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -8.0)
+        replyFieldBottomConstraint.isActive = true
+    }
     
 }

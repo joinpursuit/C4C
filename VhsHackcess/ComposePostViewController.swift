@@ -15,6 +15,7 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var commentField: UITextView!
     @IBOutlet weak var statusLabel: UILabel!
     
+    @IBOutlet weak var statusLabelBottom: NSLayoutConstraint!
     @IBOutlet weak var postButton: UIButton!
     @IBAction func postButtonTapped(_ sender: UIButton) {
         postPost()
@@ -39,6 +40,12 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
             postButton.isEnabled = false
             statusLabel.text = "Community Not Chosen"
         }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
     
     func checkLoggedIn() {
@@ -85,7 +92,7 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == topicField {
-            self.view.endEditing(true)
+            dismissKeyboard()
             return false
         }
         return true
@@ -108,5 +115,26 @@ class ComposePostViewController: UIViewController, UITextFieldDelegate, UITextVi
      // Pass the selected object to the new view controller.
      }
      */
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height / 2
+            statusLabelBottom.isActive = false
+            statusLabelBottom = statusLabel.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -keyboardHeight - 8.0)
+            statusLabelBottom.isActive = true
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        statusLabelBottom.isActive = false
+        statusLabelBottom = statusLabel.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -8.0)
+        statusLabelBottom.isActive = true
+    }
+    
     
 }
