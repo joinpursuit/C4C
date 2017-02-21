@@ -26,16 +26,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-bD-qya">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="524"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="x3S-ef-Djm" appends="YES" id="3zx-Ar-gIG"/>
                                 </connections>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Please enter your address above" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obf-RZ-5Jk">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="K20-sp-329"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HLA-ed-nib"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ljp-bD-qya" secondAttribute="bottom" id="OME-4u-5ew"/>
+                            <constraint firstItem="obf-RZ-5Jk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NB5-py-8dt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="obf-RZ-5Jk" secondAttribute="bottom" id="RgW-PC-xyZ"/>
+                            <constraint firstAttribute="trailing" secondItem="obf-RZ-5Jk" secondAttribute="trailing" id="WHM-AY-aMv"/>
+                            <constraint firstItem="obf-RZ-5Jk" firstAttribute="top" secondItem="Ljp-bD-qya" secondAttribute="bottom" id="YUd-JJ-DHu"/>
                             <constraint firstItem="Ljp-bD-qya" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="afu-rx-jIK"/>
                             <constraint firstItem="Ljp-bD-qya" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xE5-9d-sw6"/>
                             <constraint firstAttribute="trailing" secondItem="Ljp-bD-qya" secondAttribute="trailing" id="zb1-d9-IWh"/>
@@ -67,6 +83,7 @@
                     <connections>
                         <outlet property="addressTextField" destination="Cba-po-eau" id="AT7-dc-xGb"/>
                         <outlet property="communityBoardImageView" destination="Ljp-bD-qya" id="Abc-3P-xBV"/>
+                        <outlet property="linkTextView" destination="obf-RZ-5Jk" id="Mf0-gX-uq5"/>
                         <outlet property="searchButton" destination="v7R-fz-OJq" id="2qz-HM-ywM"/>
                     </connections>
                 </viewController>
@@ -93,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ItQ-IF-WKe" id="7bD-Lr-7IC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -131,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GIx-fj-dmZ" id="Bvy-ac-a2K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-3G-HuB">
@@ -365,7 +382,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gpI-TS-kpC" id="44M-7G-mbS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" ambiguous="YES" text="Comment Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-AV-sUi">
@@ -578,7 +595,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9na-pi-JWR" id="Yth-1S-mhP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descriptor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo5-1a-PMK">
@@ -786,7 +803,7 @@
         <scene sceneID="hCi-uI-Py8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Kq-JO-kBY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="311 Complaints" selectedImage="5FD092CF-8CDF-4D19-AD1E-155B1E484A3B" id="UPo-Zp-bqz"/>
+                    <tabBarItem key="tabBarItem" title="311 Complaints" selectedImage="ACCA5F39-6651-40A7-8046-040FD02FA033" id="UPo-Zp-bqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsd-Mb-SnS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -822,7 +839,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5FD092CF-8CDF-4D19-AD1E-155B1E484A3B" width="24" height="24">
+        <image name="ACCA5F39-6651-40A7-8046-040FD02FA033" width="24" height="24">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
