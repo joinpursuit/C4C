@@ -80,7 +80,7 @@ class MapViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.timeAndDateLabel.text = request.createdDate
         
         //color gradient and font changes
-        cell.selectionStyle = .none
+//        cell.selectionStyle = .none
 //        cell.backgroundColor = ColorManager.shared.colorArray[indexPath.row % ColorManager.shared.colorArray.count]
         cell.backgroundColor = ColorManager.shared.primary
         cell.descriptorLabel?.textColor = UIColor.white
