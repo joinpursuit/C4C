@@ -121,7 +121,9 @@ class MessageBoardTableViewController: UITableViewController {
                 if let postView = segue.destination as? PostViewController {
                     let cellIndexPath = self.tableView.indexPath(for: cellTapped)!
                     
-                    postView.post = posts[cellIndexPath.row].postID
+                    postView.post = posts[cellIndexPath.row]
+                    postView.postString = posts[cellIndexPath.row].postID
+                    postView.commmunityID = communityBoroughCode
                 }
             }
         }
