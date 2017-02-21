@@ -11,7 +11,9 @@ import Foundation
 class Community {
     static let community = Community()
     
-    var communityID: String? 
+    var communityID: String?
     var communityName: String?
     var borough: String?
+    var majorComplaints: [String]?
+    
 }
