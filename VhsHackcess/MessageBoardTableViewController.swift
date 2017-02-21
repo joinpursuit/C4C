@@ -75,7 +75,11 @@ class MessageBoardTableViewController: UITableViewController {
                 for child in snapshot.children {
                     if let snap = child as? FIRDataSnapshot,
                         let valueDict = snap.value as? [String : Any] {
-                        let post = Post(uid: valueDict["UID"] as! String, author: valueDict["Author"] as! String, title: valueDict["Title"] as! String, body: valueDict["Body"] as! String)//, commentCount: valueDict["commentCount"] as! Int)
+                        let post = Post(uid: valueDict["UID"] as! String,
+                                        author: valueDict["Author"] as! String,
+                                        title: valueDict["Title"] as! String,
+                                        body: valueDict["Body"] as! String,
+                                        postID: valueDict["PostID"] as! String)//, commentCount: valueDict["commentCount"] as! Int)
                         self.posts.append(post)
                     }
                 }
@@ -105,14 +109,23 @@ class MessageBoardTableViewController: UITableViewController {
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if let cellTapped = sender as? PostTableViewCell {
+            if segue.identifier == "readSegue" {
+                if let postView = segue.destination as? PostViewController {
+                    let cellIndexPath = self.tableView.indexPath(for: cellTapped)!
+                    
+                    postView.post = posts[cellIndexPath.row]
+                    postView.postString = posts[cellIndexPath.row].postID
+                    postView.commmunityID = communityBoroughCode
+                }
+            }
+        }
+    }
 }
