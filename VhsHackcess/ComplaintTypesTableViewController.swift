@@ -66,11 +66,11 @@ class ComplaintTypesTableViewController: UITableViewController {
         
         // Passing complaints onto singleton
         var tempArray = [String]()
-        for (key, _) in tuples.sorted(by: { $0.0 > $0.1} ) {
+        for (key, _) in tuples.sorted(by: { $0.1 > $1.1} ) {
             tempArray.append(key)
         }
         Community.community.majorComplaints = tempArray
-
+        
     }
     
     //MARK: - Table view data source

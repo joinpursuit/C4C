@@ -16,4 +16,6 @@ class Community {
     var borough: String?
     var majorComplaints: [String]?
     
+    
+    
 }

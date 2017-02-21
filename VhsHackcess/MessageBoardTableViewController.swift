@@ -49,9 +49,9 @@ class MessageBoardTableViewController: UITableViewController {
     // MARK: - Functions
     
     func checkCommunityPosting(_ community: String) {
-        let root = FIRDatabase.database().reference()
+        let root = FIRDatabase.database().reference().child(community).child("posts")
         root.observeSingleEvent(of: .value, with: { (snapshot) in
-            if !snapshot.hasChild(community) {
+            if !snapshot.hasChild("main_post") {
                 self.generateFirstPost(community: community)
             }
         })
@@ -61,7 +61,7 @@ class MessageBoardTableViewController: UITableViewController {
         
         if let complaints = Community.community.majorComplaints {
             if let database = databaseRef {
-                let postRef = database.child("posts").childByAutoId()
+                let postRef = database.child("posts").child("main_post")
                 let postRefDict: [String : String] = [
                     "Author" : "C4C Admin",
                     "Body" : "\(communityName!) is facing \(complaints[0]), \(complaints[1]), and \(complaints[2]) this month",
