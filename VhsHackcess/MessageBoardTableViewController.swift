@@ -14,6 +14,7 @@ class MessageBoardTableViewController: UITableViewController {
     
     var posts = [Post]()
     var communityBoroughCode: String?
+    var communityName: String?
     var databaseRef: FIRDatabaseReference?
     
     override func viewDidLoad() {
@@ -24,9 +25,7 @@ class MessageBoardTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = ColorManager.shared.primary
         
         if let community = Community.community.communityID {
-            communityBoroughCode = community
-            databaseRef = FIRDatabase.database().reference().child(community)
-            self.title = "\(Community.community.communityName!) Forums"
+            checkChosenCommunity()
         }
         else {
             goHome()
@@ -35,14 +34,50 @@ class MessageBoardTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.tableView.allowsSelection = false
+        
         if Community.community.communityID == nil {
             goHome()
         }
+        else {
         checkChosenCommunity()
+        checkCommunityPosting(communityBoroughCode!)
         populatePosts()
+        }
     }
     
     // MARK: - Functions
+    
+    func checkCommunityPosting(_ community: String) {
+        let root = FIRDatabase.database().reference().child(community).child("posts")
+        root.observeSingleEvent(of: .value, with: { (snapshot) in
+            if !snapshot.hasChild("main_post") {
+                self.generateFirstPost(community: community)
+            }
+        })
+    }
+    
+    func generateFirstPost(community: String) {
+        
+        if let complaints = Community.community.majorComplaints {
+            if let database = databaseRef {
+                let postRef = database.child("posts").child("main_post")
+                let postRefDict: [String : String] = [
+                    "Author" : "C4C Admin",
+                    "Body" : "\(communityName!) is facing \(complaints[0]), \(complaints[1]), and \(complaints[2]) this month",
+                    "Title" : "Major Concerns For this Month",
+                    "UID" : "C4C ADMIN",
+                    "PostID" : postRef.key
+                ]
+                postRef.setValue(postRefDict) { (error, reference) in
+                    if error == nil {
+                        print("Setting first post")
+                        self.populatePosts()
+                    }
+                }
+            }
+        }
+    }
     
     func goHome() {
         showOKAlert(title: "Please select a district first!", message: nil, dismissCompletion: {
@@ -60,9 +95,10 @@ class MessageBoardTableViewController: UITableViewController {
     func checkChosenCommunity() {
         if communityBoroughCode != Community.community.communityID {
             communityBoroughCode = Community.community.communityID
+            communityName = Community.community.communityName
             if let community = communityBoroughCode {
                 databaseRef = FIRDatabase.database().reference().child(community)
-                self.title = "\(Community.community.communityName!) Forums"
+                self.title = "\(communityName!) Forums"
             }
         }
     }
@@ -70,8 +106,6 @@ class MessageBoardTableViewController: UITableViewController {
     func populatePosts() {
         if let _ = communityBoroughCode {
             posts = []
-            
-            self.tableView.allowsSelection = false
             
             databaseRef?.child("posts").observeSingleEvent(of: .value , with: { (snapshot) in
                 
