@@ -157,13 +157,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Comment Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtv-bJ-dSh">
-                                            <rect key="frame" x="16" y="45" width="343" height="23.5"/>
+                                            <rect key="frame" x="16" y="45" width="343" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghB-MN-W5B">
-                                            <rect key="frame" x="16" y="76.5" width="343" height="17"/>
+                                            <rect key="frame" x="16" y="76" width="343" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -374,13 +374,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" ambiguous="YES" text="Comment Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-AV-sUi">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" text="Comment Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHy-AV-sUi">
                                                     <rect key="frame" x="16" y="16" width="311" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30M-fY-Iaj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30M-fY-Iaj">
                                                     <rect key="frame" x="16" y="57" width="311" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                     <nil key="textColor"/>
@@ -410,6 +410,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Hh0-Ve-vTn" id="UMe-2g-MnF"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlC-SJ-qqQ">
                                 <rect key="frame" x="327" y="580" width="40" height="30"/>
@@ -430,10 +433,10 @@
                             <constraint firstItem="vJI-Ei-c4E" firstAttribute="top" secondItem="GXV-ms-dN5" secondAttribute="bottom" constant="8" id="8eR-jK-gwF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lCQ-Lu-m9G" secondAttribute="trailing" constant="8" id="DEC-na-Oad"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GXV-ms-dN5" secondAttribute="trailing" constant="8" id="GbK-2R-UpT"/>
+                            <constraint firstItem="JlC-SJ-qqQ" firstAttribute="centerY" secondItem="ZAK-ho-Lr7" secondAttribute="centerY" id="HOC-hk-72O"/>
                             <constraint firstItem="GXV-ms-dN5" firstAttribute="top" secondItem="lCQ-Lu-m9G" secondAttribute="bottom" constant="8" id="MPW-h6-wYx"/>
                             <constraint firstItem="JlC-SJ-qqQ" firstAttribute="leading" secondItem="ZAK-ho-Lr7" secondAttribute="trailing" constant="8" id="NFN-hB-Jgy"/>
                             <constraint firstItem="lCQ-Lu-m9G" firstAttribute="top" secondItem="yAu-QW-th5" secondAttribute="bottom" constant="8" id="XZH-QK-01p"/>
-                            <constraint firstItem="rRC-1l-Hdx" firstAttribute="top" secondItem="JlC-SJ-qqQ" secondAttribute="bottom" constant="8" id="eAV-bS-pNK"/>
                             <constraint firstItem="JlC-SJ-qqQ" firstAttribute="trailing" secondItem="ECl-Mj-ezq" secondAttribute="trailingMargin" constant="8" id="hH6-br-Cq3"/>
                             <constraint firstItem="lCQ-Lu-m9G" firstAttribute="leading" secondItem="ECl-Mj-ezq" secondAttribute="leadingMargin" constant="8" id="hSv-SN-15g"/>
                             <constraint firstItem="GXV-ms-dN5" firstAttribute="height" secondItem="ECl-Mj-ezq" secondAttribute="height" multiplier="0.2" id="iGC-ul-vn4"/>
@@ -451,6 +454,7 @@
                         <outlet property="idLabel" destination="lCQ-Lu-m9G" id="H0B-Cs-tnB"/>
                         <outlet property="replyButton" destination="JlC-SJ-qqQ" id="Nch-Ww-BTc"/>
                         <outlet property="replyField" destination="ZAK-ho-Lr7" id="wQ0-tX-Rpp"/>
+                        <outlet property="replyFieldBottomConstraint" destination="r03-Gw-6Ve" id="GMi-ms-6My"/>
                         <outlet property="titleLabel" destination="yAu-QW-th5" id="At5-xM-YuK"/>
                     </connections>
                 </viewController>
@@ -792,7 +796,6 @@
         <scene sceneID="hCi-uI-Py8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Kq-JO-kBY" sceneMemberID="viewController">
-
                     <tabBarItem key="tabBarItem" title="311 Requests" image="nyc311" selectedImage="nyc311" id="UPo-Zp-bqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsd-Mb-SnS">
@@ -831,7 +834,6 @@
     <resources>
         <image name="C4C.png" width="16" height="16"/>
         <image name="chatbubble" width="24" height="24"/>
-
         <image name="filter_filled" width="24" height="24"/>
         <image name="nyc311" width="24" height="24"/>
     </resources>
