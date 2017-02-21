@@ -83,10 +83,27 @@ class ComplaintTypesTableViewController: UITableViewController {
         
         //color scheme
         cell.selectionStyle = .none
-        cell.backgroundColor = ColorManager.shared.colorArray[indexPath.row % ColorManager.shared.colorArray.count]
         cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.text = "\(complaint.0) (\(complaint.1))"
+        cell.textLabel?.text = "\(complaint.0)"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        switch complaint.1 {
+        case let x where x > 260:
+            cell.backgroundColor = ColorManager.shared._900
+        case let x where x > 230:
+            cell.backgroundColor = ColorManager.shared._800
+        case let x where x > 170:
+            cell.backgroundColor = ColorManager.shared._700
+        case let x where x > 110:
+            cell.backgroundColor = ColorManager.shared._600
+        case let x where x > 55:
+            cell.backgroundColor = ColorManager.shared._500
+        case let x where x > 40:
+            cell.backgroundColor = ColorManager.shared._400
+        case let x where x > 20:
+            cell.backgroundColor = ColorManager.shared._300
+        default:
+            cell.backgroundColor = ColorManager.shared._300
+        }
         
         return cell
     }
@@ -99,7 +116,7 @@ class ComplaintTypesTableViewController: UITableViewController {
             else { return }
         let selectedComplaint = self.tuples.sorted { $0.1 > $1.1 }[cellIndexPath.row]
         
-        if let endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-19' and '2017-02-19'&community_board=\(self.communityBoard)&complaint_type=\(selectedComplaint.0)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        if let endpoint = "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$where=created_date between '2017-01-20' and '2017-02-20'&community_board=\(self.communityBoard)&complaint_type=\(selectedComplaint.0)&$limit=50000".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         {
             dvc.endpoint = endpoint
             dvc.complaintType = selectedComplaint.0
