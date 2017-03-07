@@ -23,4 +23,4 @@ C4C serves as an avenue for *anyone* in the community to engage in meaningful di
 
 **Sabrina Ip** - Tech Lead : [Github](https://github.com/sabrinaip)
 
-**Victor Zhong** - Design Lead : [Github](https://github.com/vic-zhong)
+**Victor Zhong** - Design Lead : [Github](https://github.com/viczhong)
